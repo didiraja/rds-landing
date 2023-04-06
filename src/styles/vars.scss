@@ -1,0 +1,94 @@
+$blue-700: #0b485b;
+$blue-500: #19c1ce;
+$blue-300: #07e5eb;
+
+$yellow-500: #f2bf4e;
+$yellow-200: #f4ca6d;
+
+$neutral-900: #212429;
+$neutral-700: #7e8a98;
+$neutral-500: #97a1ac;
+$neutral-300: #cfd3d8;
+$neutral-200: #f1f3f5;
+
+// $font-nunito;
+// Nunito Sans
+// $font-grotesque;
+// Darker Grotesque
+
+$sizing-100: 8px;
+$sizing-200: 14px;
+$sizing-300: 16px;
+$sizing-400: 20px;
+$sizing-500: 24px;
+$sizing-600: 32px;
+$sizing-700: 40px;
+$sizing-800: 56px;
+
+.headingLG {
+  font-family: "Darker Grotesque";
+  font-size: $sizing-700;
+  // font-size: $sizing-800;
+  line-height: 100%;
+  font-weight: bolder;
+}
+
+.headingMD {
+  font-family: "Darker Grotesque";
+  font-size: $sizing-600;
+  // font-size: $sizing-700;
+  line-height: 100%;
+  font-weight: bolder;
+}
+
+.headingSM {
+  font-family: "Darker Grotesque";
+  font-size: $sizing-600;
+  // font-size: $sizing-500;
+  line-height: 110%;
+  font-weight: bolder;
+}
+
+.headingXS {
+  font-family: "Darker Grotesque";
+  font-size: $sizing-500;
+  // font-size: $sizing-400;
+  line-height: 110%;
+  font-weight: bolder;
+}
+
+.subtitleSM {
+  font-family: "Nunito Sans";
+  font-size: $sizing-400;
+  // font-size: $sizing-300;
+  line-height: 140%;
+  font-weight: normal;
+}
+
+.subtitleXS {
+  font-family: "Nunito Sans";
+  font-size: $sizing-200;
+  line-height: 120%;
+  font-weight: normal;
+}
+
+.bodyLG {
+  font-family: "Nunito Sans";
+  font-size: $sizing-400;
+  line-height: 150%;
+  font-weight: normal;
+}
+
+.bodyMD {
+  font-family: "Nunito Sans";
+  font-size: $sizing-300;
+  line-height: 150%;
+  font-weight: normal;
+}
+
+.bodySM {
+  font-family: "Nunito Sans";
+  font-size: $sizing-200;
+  line-height: 150%;
+  font-weight: normal;
+}
