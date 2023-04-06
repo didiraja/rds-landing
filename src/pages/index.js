@@ -76,7 +76,7 @@ export default function Home() {
               className={styles.formGeneral}
               type="text"
               name="name"
-              placeholder='   Insira seu nome'
+              placeholder='Insira seu nome'
             />
 
             <p className={styles.formLabel}>Seu email de trabalho</p>
@@ -85,7 +85,7 @@ export default function Home() {
               className={styles.formGeneral}
               type="text"
               name="email"
-              placeholder='   Insira seu e-mail'
+              placeholder='Insira seu e-mail'
             />
 
             <p className={styles.formLabel}>Seu email de trabalho</p>
@@ -94,24 +94,25 @@ export default function Home() {
               className={styles.formGeneral}
               type="text"
               name="phone"
-              placeholder='   Insira seu número de telefone com DDD'
+              placeholder='Insira seu número de telefone com DDD'
             />
 
             <p className={styles.formLabel}>Seu cargo de ocupação</p>
-            <select className={styles.formGeneral} name="job" id="field-job" placeholder='   Selecione seu cargo'>
-              <option>"Sócio(a) / CEO / Proprietário(a)"</option>
-              <option>"Diretor(a) de Vendas"</option>
-              <option>"Diretor(a) de Marketing"</option>
-              <option>"Diretor(a) Outras Áreas"</option>
-              <option>"Gerente de Marketing"</option>
-              <option>"Gerente de Vendas"</option>
-              <option>"Coordenador(a)/Supervisor(a) de Marketing"</option>
-              <option>"Coordenador(a)/Supervisor(a) de Vendas"</option>
-              <option>"Analista/Assistente de Marketing"</option>
-              <option>"Analista/Assistente de Vendas"</option>
-              <option>"Vendedor(a) / Executivo(a) de Contas"</option>
-              <option>"Estudante"</option>
-              <option>"Outros Cargo</option>
+            <select className={styles.formGeneral} name="job" id="field-job">
+              <option value="">Selecione seu cargo</option>
+              <option>Sócio(a) / CEO / Proprietário(a)</option>
+              <option>Diretor(a) de Vendas</option>
+              <option>Diretor(a) de Marketing</option>
+              <option>Diretor(a) Outras Áreas</option>
+              <option>Gerente de Marketing</option>
+              <option>Gerente de Vendas</option>
+              <option>Coordenador(a)/Supervisor(a) de Marketing</option>
+              <option>Coordenador(a)/Supervisor(a) de Vendas</option>
+              <option>Analista/Assistente de Marketing</option>
+              <option>Analista/Assistente de Vendas</option>
+              <option>Vendedor(a) / Executivo(a) de Contas</option>
+              <option>Estudante</option>
+              <option>Outros Cargo</option>
             </select>
 
             <p className={styles.formLabel}>Crie uma senha</p>
@@ -124,7 +125,7 @@ export default function Home() {
             {/* Meu site é */}
             <input className={styles.formRadio} type="radio" name="site" id="" />
 
-            <input className={styles.formGeneral} type="text" name="" id="" placeholder='   Insira o endereço do seu site'/>
+            <input className={styles.formGeneral} type="text" name="" id="" placeholder='Insira o endereço do seu site'/>
 
             {/* Ainda não tenho site */}
             <input className={styles.formRadio} type="radio" name="site" id="" />
