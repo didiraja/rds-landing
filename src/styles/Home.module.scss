@@ -21,7 +21,7 @@
 }
 
 .description {
-  @extend .bodyLG;
+  @extend .bodyMD;
   margin-bottom: $sizing-600;
 }
 
@@ -34,12 +34,16 @@
 }
 
 .formTitle {
-  @extend .headingXS;
+  @extend .headingSM;
+  font-size: 22px;
+  font-weight: 800;
   margin-bottom: $sizing-300;
 }
 
 .formSub {
-  @extend .subtitleXS;
+  @extend .subtitleSM;
+  font-size: 14px;
+  color: $neutral-700;
   margin-bottom: $sizing-600;
 }
 
@@ -52,6 +56,7 @@
   @extend .headingXS;
   text-align: left;
   margin-bottom: $sizing-100;
+  font-weight: 700;
 }
 
 .formGeneral {
@@ -65,11 +70,12 @@
 .formRadio {
   width: 30px;
   height: 30px;
-  text-align: left;
+  display: block;
 }
 
 .formLegal {
   list-style-type: disc;
+  @extend .subtitleXS;
 }
 
 // .description a {

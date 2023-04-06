@@ -1,9 +1,20 @@
 import Head from 'next/head';
 import Image from 'next/image';
-// import { Inter } from 'next/font/google';
+import { Darker_Grotesque, Nunito_Sans } from 'next/font/google';
 import styles from '@/styles/Home.module.scss';
 
-// const inter = Inter({ subsets: ['latin'] });
+const grotesque = Darker_Grotesque({
+  variable: '--grotesque-font',
+  // subsets: ['latin'],
+  weight: ['300','400','500','600','700','800','900',],
+  preload: false,
+});
+const nunito = Nunito_Sans({
+  variable: '--nunito-font',
+  // subsets: ['latin'],
+  weight: ['200', '300','400','600','700','800','900',],
+  preload: false,
+});
 
 export default function Home() {
   return (
@@ -32,7 +43,7 @@ export default function Home() {
         />
       </navbar>
 
-      <main className={styles.main}>
+      <main className={`${styles.main} ${grotesque.variable} ${nunito.variable}`}>
 
         <div className={styles.titleBlock}>
           <p className={styles.title}>

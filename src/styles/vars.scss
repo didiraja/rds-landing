@@ -26,69 +26,69 @@ $sizing-700: 40px;
 $sizing-800: 56px;
 
 .headingLG {
-  font-family: "Darker Grotesque";
+  font-family: var(--grotesque-font);
   font-size: $sizing-700;
   // font-size: $sizing-800;
   line-height: 100%;
-  font-weight: bolder;
+  font-weight: 900;
 }
 
 .headingMD {
-  font-family: "Darker Grotesque";
+  font-family: var(--grotesque-font);
   font-size: $sizing-600;
   // font-size: $sizing-700;
   line-height: 100%;
-  font-weight: bolder;
+  font-weight: 700;
 }
 
 .headingSM {
-  font-family: "Darker Grotesque";
+  font-family: var(--grotesque-font);
   font-size: $sizing-600;
   // font-size: $sizing-500;
   line-height: 110%;
-  font-weight: bolder;
+  font-weight: 500;
 }
 
 .headingXS {
-  font-family: "Darker Grotesque";
+  font-family: var(--grotesque-font);
   font-size: $sizing-500;
   // font-size: $sizing-400;
   line-height: 110%;
-  font-weight: bolder;
+  font-weight: 500;
 }
 
 .subtitleSM {
-  font-family: "Nunito Sans";
+  font-family: var(--nunito-font);
   font-size: $sizing-400;
   // font-size: $sizing-300;
   line-height: 140%;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .subtitleXS {
-  font-family: "Nunito Sans";
+  font-family: var(--nunito-font);
   font-size: $sizing-200;
   line-height: 120%;
-  font-weight: normal;
+  font-weight: 200;
 }
 
 .bodyLG {
-  font-family: "Nunito Sans";
+  font-family: var(--nunito-font);
   font-size: $sizing-400;
   line-height: 150%;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .bodyMD {
-  font-family: "Nunito Sans";
+  font-family: var(--nunito-font);
   font-size: $sizing-300;
   line-height: 150%;
-  font-weight: normal;
+  font-weight: 300;
 }
 
 .bodySM {
-  font-family: "Nunito Sans";
+  font-family: var(--nunito-font);
   font-size: $sizing-200;
   line-height: 150%;
-  font-weight: normal;
+  font-weight: 200;
 }
