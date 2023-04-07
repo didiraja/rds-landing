@@ -2,17 +2,18 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Darker_Grotesque, Nunito_Sans } from 'next/font/google';
 import styles from '@/styles/Home.module.scss';
+import Button from '@/components/Button';
 
 const grotesque = Darker_Grotesque({
   variable: '--grotesque-font',
   // subsets: ['latin'],
-  weight: ['300','400','500','600','700','800','900',],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
   preload: false,
 });
 const nunito = Nunito_Sans({
   variable: '--nunito-font',
   // subsets: ['latin'],
-  weight: ['200', '300','400','600','700','800','900',],
+  weight: ['200', '300', '400', '600', '700', '800', '900'],
   preload: false,
 });
 
@@ -76,7 +77,7 @@ export default function Home() {
               className={styles.formGeneral}
               type="text"
               name="name"
-              placeholder='Insira seu nome'
+              placeholder="Insira seu nome"
             />
 
             <p className={styles.formLabel}>Seu email de trabalho</p>
@@ -85,7 +86,7 @@ export default function Home() {
               className={styles.formGeneral}
               type="text"
               name="email"
-              placeholder='Insira seu e-mail'
+              placeholder="Insira seu e-mail"
             />
 
             <p className={styles.formLabel}>Seu email de trabalho</p>
@@ -94,7 +95,7 @@ export default function Home() {
               className={styles.formGeneral}
               type="text"
               name="phone"
-              placeholder='Insira seu número de telefone com DDD'
+              placeholder="Insira seu número de telefone com DDD"
             />
 
             <p className={styles.formLabel}>Seu cargo de ocupação</p>
@@ -117,26 +118,53 @@ export default function Home() {
 
             <p className={styles.formLabel}>Crie uma senha</p>
             <input className={styles.formGeneral} type="password" name="" id="" />
-            
+
             <p className={styles.formLabel}>Confirme sua senha</p>
             <input className={styles.formGeneral} type="password" name="" id="" />
 
             <p className={styles.formLabel}>Qual o site da sua empresa?</p>
-            {/* Meu site é */}
-            <input className={styles.formRadio} type="radio" name="site" id="" />
 
-            <input className={styles.formGeneral} type="text" name="" id="" placeholder='Insira o endereço do seu site'/>
+            <div className={styles.radioWrapper}>
+              <input className={styles.formRadio} type="radio" name="site" id="site" />
+              <label htmlFor="site">Meu site é</label>
+            </div>
 
-            {/* Ainda não tenho site */}
-            <input className={styles.formRadio} type="radio" name="site" id="" />
+            <input className={styles.formGeneral} type="text" name="" id="" placeholder="Insira o endereço do seu site" />
+
+            <div className={styles.radioWrapper}>
+              <input className={styles.formRadio} type="radio" name="site" id="no-site" />
+              <label htmlFor="site">Ainda não tenho site</label>
+            </div>
 
             <ul className={styles.formLegal}>
-              <li>Ao criar minha conta estou de acordo com os <a href="#" target="_blank" rel="noopener noreferrer">termos de uso</a> do software e <a href="http://" target="_blank" rel="noopener noreferrer">política de privacidade.</a></li>
+              <li>
+                Ao criar minha conta estou de acordo com os
+                {' '}
+                <a
+                  href="http://"
+                  target="_blank"
+                  className={`${styles.a} ${styles.highlight}`}
+                  rel="noreferrer"
+                >
+                  termos de uso
+                </a>
+                {' '}
+                do software e
+                {' '}
+                <a
+                  href="http://"
+                  target="_blank"
+                  className={`${styles.a} ${styles.highlight}`}
+                  rel="noreferrer"
+                >
+                  política de privacidade.
+                </a>
+              </li>
               <li>Ao preencher o formulário, concordo em receber comunicações de acordo com meus interesses.</li>
               <li>*Você pode alterar suas permissões de comunicação a qualquer tempo.</li>
             </ul>
 
-            <button type="submit">criar minha conta</button>
+            <Button highlight className="w-full">criar minha conta</Button>
           </form>
         </div>
 

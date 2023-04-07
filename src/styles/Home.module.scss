@@ -1,5 +1,13 @@
 @import "vars";
 
+.a {
+  border-bottom: 1px solid;
+}
+
+.a:hover {
+  border-bottom: none;
+}
+
 .navbar {
   @apply bg-white block w-full flex justify-between;
   padding: $sizing-400 $sizing-300;
@@ -12,7 +20,7 @@
 }
 
 .highlight {
-  color: $blue-300;
+  color: $blue-500;
 }
 
 .title {
@@ -55,28 +63,45 @@
 .formLabel {
   @extend .headingXS;
   text-align: left;
-  margin-bottom: $sizing-100;
+  margin-bottom: $sizing-200;
   font-weight: 700;
 }
 
 .formGeneral {
   @apply w-full;
   border: 2px solid black;
+  box-shadow: inset 6px 6px 0px #eefbfb;
   margin-bottom: $sizing-300;
   min-height: $sizing-700;
-  box-shadow: inset 6px 6px 0px #eefbfb;
   padding-left: $sizing-200;
 }
 
+.radioWrapper {
+  @apply flex;
+}
+
 .formRadio {
-  width: 30px;
-  height: 30px;
   display: block;
+  width: $sizing-400;
+  height: $sizing-400;
+  margin: 0 $sizing-100 $sizing-300 0;
+  accent-color: $blue-500;
 }
 
 .formLegal {
-  list-style-type: disc;
   @extend .subtitleXS;
+  @apply text-left;
+  padding-left: $sizing-300;
+  margin-bottom: $sizing-500;
+  list-style-type: disc;
+  color: $neutral-700;
+  font-size: 13px;
+  font-weight: normal;
+
+  li {
+    line-height: 1.2rem;
+    margin-bottom: 8px;
+  }
 }
 
 // .description a {
