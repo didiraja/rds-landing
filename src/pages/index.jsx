@@ -11,12 +11,91 @@ const grotesque = Darker_Grotesque({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
   preload: false,
 });
+
 const nunito = Nunito_Sans({
   variable: '--nunito-font',
   // subsets: ['latin'],
   weight: ['200', '300', '400', '600', '700', '800', '900'],
   preload: false,
 });
+
+const benefits = [
+  {
+    icon: 'chart-line',
+    title: 'Torne sua operação de Marketing Digital mais produtiva',
+    content: 'Chega de usar várias ferramentas separadas e perder as informações no caminho! Somos o que chamam de ferramenta tudo-em-um: reunimos os principais recursos de Marketing Digital em um só lugar para sua operação ser mais eficaz.',
+  },
+  {
+    icon: 'bullhorn',
+    title: 'Crie facilmente campanhas que funcionam',
+    content: 'É fácil usar o RD Station Marketing, porque suas funcionalidades são simples, mas poderosas, e contam com dezenas de modelos — como de Landing Pages, Pop-ups, emails — para diversas ocasiões e segmentos que você pode personalizar de acordo com a sua campanha.',
+  },
+  {
+    icon: 'chart-network',
+    title: 'Construa jornadas personalizadas e gere vendas em escala',
+    content: 'Envie a mensagem certa na hora certa e construa jornadas personalizadas que geram até 5x mais conversões e guiam Leads até a compra. Automatize também suas tarefas e aumente a produtividade de Marketing e Vendas.',
+  },
+  {
+    icon: 'star',
+    title: 'Encontre automaticamente as melhores oportunidades',
+    content: 'Conheça melhor seu público, de acordo com as informações capturadas nas suas páginas e formulários. Defina critérios para identificar automaticamente Leads com maior potencial de compra e envie para o comercial oportunidades qualificadas.',
+  },
+  {
+    icon: 'chart-pie',
+    title: 'Saia da incerteza e comprove resultados',
+    content: 'Ao invés de fazer uma série de ações isoladas, sem saber qual funciona, junte as informações de todos os seus contatos e suas ações em diferentes canais com recursos de análise para provar que Marketing Digital traz mais vendas e clientes.',
+  },
+  {
+    icon: 'globe',
+    title: 'Suporte ágil e na sua língua',
+    content: 'Nosso time de suporte técnico está disponível quando você precisar, com uma taxa de satisfação de 97% entre nossos clientes e um tempo médio de resolução de 6 horas. E o melhor: tudo isso em português.',
+  },
+];
+
+const integrations = [
+  {
+    icon: 'rd-station-crm',
+    label: 'RD Station CRM',
+  },
+  {
+    icon: 'salesforce',
+    label: 'Salesforce',
+  },
+  {
+    icon: 'google',
+    label: 'Google',
+  },
+  {
+    icon: 'facebook',
+    label: 'Facebook',
+  },
+  {
+    icon: 'linkedin',
+    label: 'Linkedin',
+  },
+  {
+    icon: 'wordpress',
+    label: 'Wordpress',
+  },
+  {
+    icon: 'hotmart',
+    label: 'Hotmart',
+  },
+  {
+    icon: 'pagseguro',
+    label: 'PagSeguro',
+  },
+  {
+    icon: 'shopify',
+    label: 'Shopify',
+  },
+  {
+    icon: 'zapier',
+    label: 'Zapier',
+  },
+];
+
+const social = ['twitter', 'facebook', 'linkedin', 'instagram', 'youtube'];
 
 export default function Home() {
   return (
@@ -32,7 +111,7 @@ export default function Home() {
           src="/logo-default.svg"
           alt="RD Station"
           // className={}
-          width={100}
+          width={150}
           height={24}
           priority
         />
@@ -194,45 +273,55 @@ export default function Home() {
 
           <ul>
             <li>
-              <strong>Ferramentas intuitivas</strong>
-              {' '}
-              e com modelos prontos, vídeos explicativos e passo a passo guiado
+              <p>
+                <strong>Ferramentas intuitivas</strong>
+                {' '}
+                e com modelos prontos, vídeos explicativos e passo a passo guiado
+              </p>
             </li>
             <li>
-              <strong>Implementação com especialistas</strong>
-              {' '}
-              focada em planejamento e prática (nos planos Marketing Pro e Enterprise)
+              <p>
+                <strong>Implementação com especialistas</strong>
+                {' '}
+                focada em planejamento e prática (nos planos Marketing Pro e Enterprise)
+              </p>
             </li>
             <li>
-              <strong>Time de especialistas em Sucesso do Cliente</strong>
-              {' '}
-              para apoiar na otimização da estratégia em cada fase da sua jornada (nos planos Marketing Pro e Enterprise)
+              <p>
+                <strong>Time de especialistas em Sucesso do Cliente</strong>
+                {' '}
+                para apoiar na otimização da estratégia em cada fase da sua jornada (nos planos Marketing Pro e Enterprise)
+              </p>
             </li>
             <li>
-              <strong>Suporte técnico</strong>
-              {' '}
-              em português, espanhol e inglês para tirar dúvidas,
-              {' '}
-              <strong>com 97% de satisfação</strong>
-              {' '}
-              entre nossos clientes
+              <p>
+                <strong>Suporte técnico</strong>
+                {' '}
+                em português, espanhol e inglês para tirar dúvidas,
+                {' '}
+                <strong>com 97% de satisfação</strong>
+                {' '}
+                entre nossos clientes
+              </p>
             </li>
             <li>
-              <strong>Muito conteúdo educativo</strong>
-              , eventos, cursos da
-              {' '}
-              <a href="http://" target="_blank" className={`${styles.a} ${styles.highlight}`} rel="noreferrer">RD University</a>
-              {' '}
-              e comunidades para você continuar evoluindo
+              <p>
+                <strong>Muito conteúdo educativo</strong>
+                , eventos, cursos da
+                {' '}
+                <a href="http://" target="_blank" className={`${styles.a} ${styles.highlight}`} rel="noreferrer">RD University</a>
+                {' '}
+                e comunidades para você continuar evoluindo
+              </p>
             </li>
           </ul>
 
           <Image
             src="/img-results.jpg"
             alt="Mulher escrevendo na lousa"
-            className="py-5"
-            width={325}
-            height={325}
+            className="py-5 w-full"
+            width={600}
+            height={600}
           />
         </div>
 
@@ -340,15 +429,126 @@ export default function Home() {
         </div> */}
       </main>
 
-      <section className={styles.benefits}>
-        <div className={styles.container}>
-          <p className="title">
-            A ferramenta de Automação de Marketing líder na América Latina
-          </p>
+      <div className={`${grotesque.variable} ${nunito.variable}`}>
+        <section className={styles.benefits}>
+          <div className={styles.container}>
+            <p className="title">
+              A ferramenta de Automação de Marketing líder na América Latina
+            </p>
 
-          <Slide />
-        </div>
-      </section>
+            {
+              benefits ? benefits.map((item) => (
+                <Slide
+                  icon={item.icon}
+                  title={item.title}
+                  content={item.content}
+                />
+              )) : null
+            }
+
+          </div>
+        </section>
+
+        <section className={styles.cta}>
+          <div className={styles.container}>
+            <p className="title">
+              Por que mais de 25.000 empresas escolheram o RD Station?
+            </p>
+            <p className="content">
+              Combinamos nossos produtos de Marketing e Vendas com pessoas que se importam com seus resultados e um ecossistema que apoia o seu negócio do planejamento à prática.
+            </p>
+
+            <Button highlight className="w-full">criar conta gratuita</Button>
+          </div>
+        </section>
+
+        <section className={styles.demo}>
+          <div className={styles.container}>
+            <p className="title">
+              Entenda melhor como o RD Station Marketing funciona na prática
+            </p>
+
+            <Button secondary className="w-full button">
+              assista a demonstração
+              {' '}
+              {'>'}
+            </Button>
+
+            <Image
+              className="w-full thumbnail"
+              src="/img-video-thumbnail.jpg"
+              alt="menu"
+              width={424}
+              height={238}
+            />
+          </div>
+        </section>
+
+        <section className={styles.integrations}>
+          <div className={styles.container}>
+            <p className="title">
+              Torne sua operação de Marketing ainda mais poderosa
+            </p>
+
+            <p className="content">
+              O RD Station Marketing se conecta as principais ferramentas nacionais e internacionais
+            </p>
+
+            <div className="brands-wrapper mx-auto">
+              {
+                integrations ? integrations.map((brand) => (
+                  <div className="brand inline-block">
+                    <img className="brand-icon mx-auto" src={`/brands/${brand.icon}.svg`} alt={brand.label} />
+                    <p className="label text-center">{brand.label}</p>
+                  </div>
+                )) : null
+              }
+            </div>
+
+            <Button className="button block mx-auto">
+              criar conta gratuita
+            </Button>
+          </div>
+        </section>
+
+        <footer className={styles.footer}>
+          <div className={styles.container}>
+            <Image
+              className="mx-auto"
+              src="/logo-bw.svg"
+              alt="RD Station"
+              width={174}
+              height={32}
+            />
+
+            <hr />
+
+            <div className="social mx-auto w-[60%]">
+              {
+                social ? social.map((item) => (
+                  <a href="#">
+                    <img
+                      className="social-icon"
+                      src={`/social/${item}.svg`}
+                      alt={item}
+                    />
+                  </a>
+                )) : null
+              }
+            </div>
+
+            <p className="legal">
+              © 2021
+              {' '}
+              <strong>RD Station</strong>
+              .
+              {' '}
+              <a className={styles.a} href="">Política de Privacidade</a>
+              .
+            </p>
+          </div>
+        </footer>
+      </div>
     </>
   );
 }
