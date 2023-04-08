@@ -1,0 +1,26 @@
+@import "../styles/vars.scss";
+
+.slide {
+  background-color: white;
+  box-shadow: 0px 4px 12px rgba(33, 36, 41, 0.14);
+  border-radius: 2px;
+  padding: $sizing-500;
+
+  .icon {
+    margin-bottom: $sizing-400;
+  }
+
+  .title {
+    @extend .headingLG;
+    font-size: 25px;
+    line-height: 140%;
+    font-weight: 700;
+    margin-bottom: $sizing-300;
+  }
+  .content {
+    @extend .bodyMD;
+    font-size: 19px;
+    line-height: 150%;
+    font-weight: 400;
+  }
+}

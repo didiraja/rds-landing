@@ -8,6 +8,10 @@
   border-bottom: none;
 }
 
+.container {
+  padding: $sizing-700 $sizing-300;
+}
+
 .navbar {
   @apply bg-white block w-full flex justify-between;
   padding: $sizing-400 $sizing-300;
@@ -16,7 +20,6 @@
 
 .main {
   background-color: $neutral-200;
-  padding: $sizing-700 $sizing-300;
 }
 
 .highlight {
@@ -34,11 +37,11 @@
 }
 
 .formBox {
+  text-align: center;
   background-color: white;
   box-shadow: 0px 4px 12px rgba(33, 36, 41, 0.14);
   border-radius: 2px;
   padding: $sizing-700 $sizing-500;
-  text-align: center;
 }
 
 .formTitle {
@@ -91,16 +94,70 @@
 .formLegal {
   @extend .subtitleXS;
   @apply text-left;
-  padding-left: $sizing-300;
+  // padding-left: $sizing-300;
   margin-bottom: $sizing-500;
-  list-style-type: disc;
   color: $neutral-700;
   font-size: 13px;
   font-weight: normal;
+  padding-left: $sizing-300;
 
   li {
     line-height: 1.2rem;
     margin-bottom: 8px;
+  }
+}
+
+.contentTitle {
+  @extend .headingSM;
+  @apply font-bold;
+  margin-bottom: $sizing-400;
+}
+
+.contentSub {
+  @extend .bodySM;
+  @apply font-normal;
+  margin-bottom: $sizing-400;
+}
+
+.contentText {
+  @extend .bodyMD;
+  margin-bottom: $sizing-400;
+
+  strong {
+    @apply font-bold;
+  }
+}
+
+.together {
+  background-color: $blue-700;
+  color: white;
+  padding: $sizing-700 $sizing-300 $sizing-100;
+  margin-bottom: $sizing-700;
+}
+
+.results {
+  ul {
+    list-style: none;
+  }
+  li {
+    @extend .contentText;
+  }
+  li::before {
+    content: "🗸";
+    padding-right: 8px;
+    color: $blue-300;
+    font-weight: bold;
+    font-size: 24px;
+  }
+}
+
+.benefits {
+  background-color: white;
+
+  :global(.title) {
+    @extend .headingLG;
+    font-weight: 900;
+    margin-bottom: 64px;
   }
 }
 
