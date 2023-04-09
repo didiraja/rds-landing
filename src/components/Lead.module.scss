@@ -23,7 +23,9 @@
     width: 26rem;
   }
 
-  .description {
-    width: 30rem;
+  .lead {
+    :global(.description) {
+      width: 30rem;
+    }
   }
 }
