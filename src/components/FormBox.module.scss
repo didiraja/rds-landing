@@ -43,6 +43,12 @@
     padding-left: $sizing-200;
   }
 
+  :global(.form-select) {
+    @apply w-full;
+    @extend :global(.form-general);
+    padding: $sizing-100 $sizing-200;
+  }
+
   :global(.radio-wrapper) {
     @apply flex;
   }

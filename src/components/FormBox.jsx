@@ -1,10 +1,12 @@
 import styles from './FormBox.module.scss';
 import Button from '@/components/Button';
 
+const select = ['Sócio(a) / CEO / Proprietário(a)', 'Diretor(a) de Vendas', 'Diretor(a) de Marketing', 'Diretor(a) Outras Áreas', 'Gerente de Marketing', 'Gerente de Vendas', 'Coordenador(a)/Supervisor(a) de Marketing', 'Coordenador(a)/Supervisor(a) de Vendas', 'Analista/Assistente de Marketing', 'Analista/Assistente de Vendas', 'Vendedor(a) / Executivo(a) de Contas', 'Estudante', 'Outros Cargo'];
+
 function FormBox() {
   return (
-    <section id="form-box" className={styles.formBox}>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <section id="form-box" className={styles.formBox}>
         <p className="title">
           Comece seus 10 dias de teste grátis do RD Station Marketing!
         </p>
@@ -17,6 +19,7 @@ function FormBox() {
         <form>
           <p className="form-label">Diga, qual seu nome?</p>
           <input
+            required
             id="field-name"
             className="form-general"
             type="text"
@@ -26,15 +29,17 @@ function FormBox() {
 
           <p className="form-label">Seu email de trabalho</p>
           <input
+            required
             id="field-email"
             className="form-general"
-            type="text"
+            type="email"
             name="email"
             placeholder="Insira seu e-mail"
           />
 
-          <p className="form-label">Seu email de trabalho</p>
+          <p className="form-label">Seu telefone</p>
           <input
+            required
             id="field-phone"
             className="form-general"
             type="text"
@@ -43,40 +48,35 @@ function FormBox() {
           />
 
           <p className="form-label">Seu cargo de ocupação</p>
-          <select className="form-general" name="job" id="field-job">
+          <select required className="form-select" name="job" id="field-job">
             <option value="">Selecione seu cargo</option>
-            <option>Sócio(a) / CEO / Proprietário(a)</option>
-            <option>Diretor(a) de Vendas</option>
-            <option>Diretor(a) de Marketing</option>
-            <option>Diretor(a) Outras Áreas</option>
-            <option>Gerente de Marketing</option>
-            <option>Gerente de Vendas</option>
-            <option>Coordenador(a)/Supervisor(a) de Marketing</option>
-            <option>Coordenador(a)/Supervisor(a) de Vendas</option>
-            <option>Analista/Assistente de Marketing</option>
-            <option>Analista/Assistente de Vendas</option>
-            <option>Vendedor(a) / Executivo(a) de Contas</option>
-            <option>Estudante</option>
-            <option>Outros Cargo</option>
+            {select ? select.map((item) => <option value={item}>{item}</option>) : null}
           </select>
 
           <p className="form-label">Crie uma senha</p>
           <input className="form-general" type="password" name="" id="" />
 
           <p className="form-label">Confirme sua senha</p>
-          <input className="form-general" type="password" name="" id="" />
+          <input required className="form-general" type="password" name="" id="" />
 
           <p className="form-label">Qual o site da sua empresa?</p>
 
           <div className="radio-wrapper">
-            <input className="form-radio" type="radio" name="site" id="site" />
+            <input required className="form-radio" type="radio" name="site" id="site" />
             <label htmlFor="site">Meu site é</label>
           </div>
 
-          <input className="form-general" type="text" name="" id="" placeholder="Insira o endereço do seu site" />
+          <input
+            required
+            className="form-general"
+            type="text"
+            name=""
+            id=""
+            placeholder="Insira o endereço do seu site"
+          />
 
           <div className="radio-wrapper">
-            <input className="form-radio" type="radio" name="site" id="no-site" />
+            <input required className="form-radio" type="radio" name="site" id="no-site" />
             <label htmlFor="site">Ainda não tenho site</label>
           </div>
 
@@ -110,8 +110,8 @@ function FormBox() {
 
           <Button highlight className="w-full">criar minha conta</Button>
         </form>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
