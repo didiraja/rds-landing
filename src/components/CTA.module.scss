@@ -1,0 +1,23 @@
+@import "@/styles/vars.scss";
+
+.cta {
+  background-color: $blue-700;
+  color: white;
+  background-image: url("/graph-left.svg"), url("/graph-right.svg");
+  background-position: -320px 30px, -30px -320px;
+  background-size: 200%;
+  background-repeat: no-repeat;
+  text-align: center;
+
+  :global(.title) {
+    @extend .headingMD;
+    margin-bottom: $sizing-300;
+  }
+
+  :global(.content) {
+    @extend .bodyMD;
+    font-size: 20px;
+    line-height: 150%;
+    margin-bottom: $sizing-600;
+  }
+}

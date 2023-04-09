@@ -1,0 +1,7 @@
+@import "@/styles/vars.scss";
+
+.navbar {
+  @apply bg-white block w-full flex justify-between;
+  padding: $sizing-400 $sizing-300;
+  border-bottom: 2px solid $neutral-300;
+}

@@ -7,7 +7,7 @@ function Button({
   // <div className={styles.wrapper}>
     <button
       type="submit"
-      className={`${className} ${secondary ? styles.secondary : styles.primary} ${highlight ? styles.highlight : ''}`}
+      className={`${className} ${(secondary || !primary) ? styles.secondary : styles.primary} ${highlight ? styles.highlight : ''}`}
       onClick={() => onClick()}
     >
       {children}

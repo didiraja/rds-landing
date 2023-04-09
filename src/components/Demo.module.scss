@@ -1,0 +1,18 @@
+@import "@/styles/vars.scss";
+
+.demo {
+  background-color: $neutral-200;
+
+  :global(.title) {
+    @extend .headingLG;
+    margin-bottom: $sizing-300;
+  }
+
+  :global(.button) {
+    margin-bottom: $sizing-800;
+  }
+
+  :global(.thumbnail) {
+    cursor: pointer;
+  }
+}

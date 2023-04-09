@@ -1,0 +1,35 @@
+@import "@/styles/vars.scss";
+
+.integrations {
+  background-color: $neutral-200;
+
+  :global(.title) {
+    @extend .headingLG;
+    // font-weight: 900;
+    margin-bottom: $sizing-300;
+  }
+
+  :global(.content) {
+    @extend .bodyLG;
+    margin-bottom: $sizing-600;
+  }
+
+  :global(.brands-wrapper) {
+    width: 80%;
+    margin-bottom: $sizing-600;
+
+    :global(.brand) {
+      width: 50%;
+      margin-bottom: $sizing-600;
+    }
+
+    :global(.brand-icon) {
+      margin-bottom: $sizing-100;
+    }
+
+    :global(.label) {
+      @extend .bodySM;
+      font-weight: 500;
+    }
+  }
+}

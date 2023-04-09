@@ -1,0 +1,20 @@
+@import "@/styles/vars.scss";
+
+.results {
+  ul {
+    list-style: none;
+  }
+  li {
+    @extend .contentText;
+    display: flex;
+    align-items: flex-start;
+  }
+  li::before {
+    background: url("/icon/check.svg") no-repeat left top;
+    width: 24px;
+    height: 24px;
+    content: "";
+    padding-right: 18px;
+    margin-right: 18px;
+  }
+}

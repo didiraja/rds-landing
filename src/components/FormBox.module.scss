@@ -1,0 +1,73 @@
+@import "@/styles/vars.scss";
+
+.formBox {
+  text-align: center;
+  background-color: white;
+  box-shadow: 0px 4px 12px rgba(33, 36, 41, 0.14);
+  border-radius: 2px;
+  padding: $sizing-700 $sizing-500;
+
+  :global(.title) {
+    @extend .headingSM;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: $sizing-300;
+  }
+
+  :global(.sub) {
+    @extend .subtitleSM;
+    font-size: 14px;
+    color: $neutral-700;
+    margin-bottom: $sizing-600;
+  }
+
+  :global(hr) {
+    color: $neutral-300;
+    margin-bottom: $sizing-500;
+  }
+
+  :global(.form-label) {
+    @extend .headingXS;
+    text-align: left;
+    margin-bottom: $sizing-200;
+    font-weight: 700;
+  }
+
+  :global(.form-general) {
+    @apply w-full;
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: inset 6px 6px 0px #eefbfb;
+    margin-bottom: $sizing-300;
+    min-height: $sizing-700;
+    padding-left: $sizing-200;
+  }
+
+  :global(.radio-wrapper) {
+    @apply flex;
+  }
+
+  :global(.form-radio) {
+    display: block;
+    width: $sizing-400;
+    height: $sizing-400;
+    margin: 0 $sizing-100 $sizing-300 0;
+    accent-color: $blue-500;
+  }
+
+  :global(.legal) {
+    @extend .subtitleXS;
+    @apply text-left;
+    // padding-left: $sizing-300;
+    margin-bottom: $sizing-500;
+    color: $neutral-700;
+    font-size: 13px;
+    font-weight: normal;
+    padding-left: $sizing-300;
+
+    li {
+      line-height: 1.2rem;
+      margin-bottom: 8px;
+    }
+  }
+}

@@ -92,3 +92,40 @@ $sizing-800: 56px;
   line-height: 150%;
   font-weight: 200;
 }
+
+.a {
+  border-bottom: 1px solid;
+}
+
+.a:hover {
+  border-bottom: none;
+}
+
+.container {
+  padding: $sizing-700 $sizing-300;
+}
+
+.highlight {
+  color: $blue-500;
+}
+
+.contentTitle {
+  @extend .headingSM;
+  @apply font-bold;
+  margin-bottom: $sizing-400;
+}
+
+.contentSub {
+  @extend .bodySM;
+  @apply font-normal;
+  margin-bottom: $sizing-400;
+}
+
+.contentText {
+  @extend .bodyMD;
+  margin-bottom: $sizing-400;
+
+  strong {
+    @apply font-bold;
+  }
+}

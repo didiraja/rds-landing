@@ -1,0 +1,11 @@
+@import "@/styles/vars.scss";
+
+.benefits {
+  background-color: white;
+
+  :global(.title) {
+    @extend .headingLG;
+    font-weight: 900;
+    margin-bottom: 64px;
+  }
+}

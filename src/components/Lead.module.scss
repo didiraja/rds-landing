@@ -1,0 +1,13 @@
+@import "@/styles/vars.scss";
+
+.titleBlock {
+  :global(.title) {
+    @extend .headingLG;
+    margin-bottom: $sizing-500;
+  }
+
+  :global(.description) {
+    @extend .bodyMD;
+    margin-bottom: $sizing-600;
+  }
+}
