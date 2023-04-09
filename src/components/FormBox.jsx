@@ -5,7 +5,7 @@ const select = ['Sócio(a) / CEO / Proprietário(a)', 'Diretor(a) de Vendas', 'D
 
 function FormBox() {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${styles.formPosition}`}>
       <section id="form-box" className={styles.formBox}>
         <p className="title">
           Comece seus 10 dias de teste grátis do RD Station Marketing!

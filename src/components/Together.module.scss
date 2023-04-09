@@ -5,3 +5,13 @@
   color: white;
   margin-bottom: $sizing-700;
 }
+
+@media (min-width: 1024px) {
+  .together {
+    padding-top: 4rem;
+
+    .contentText {
+      width: 33rem;
+    }
+  }
+}

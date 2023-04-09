@@ -40,7 +40,7 @@ export default function Home() {
 
       <Navbar />
 
-      <main className={`${styles.main} ${grotesque.variable} ${nunito.variable}`}>
+      <main className={`relative ${styles.main} ${grotesque.variable} ${nunito.variable}`}>
         <Lead />
 
         <FormBox />

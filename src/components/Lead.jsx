@@ -2,7 +2,7 @@ import styles from './Lead.module.scss';
 
 function Lead() {
   return (
-    <section id="lead">
+    <section id="lead" className={styles.lead}>
       <div className={styles.container}>
         <div className={styles.titleBlock}>
           <p className="title">

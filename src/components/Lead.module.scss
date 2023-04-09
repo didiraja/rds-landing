@@ -11,3 +11,19 @@
     margin-bottom: $sizing-600;
   }
 }
+
+@media (min-width: 1024px) {
+  .lead {
+    padding-left: 2rem;
+    padding-bottom: 15rem;
+    padding-top: 3rem;
+  }
+
+  .titleBlock {
+    width: 26rem;
+  }
+
+  .description {
+    width: 30rem;
+  }
+}
