@@ -20,7 +20,7 @@ function Footer() {
         <div className="social mx-auto w-[60%]">
           {social
             ? social.map((item) => (
-              <a href="#">
+              <a href="http://">
                 <img
                   className="social-icon"
                   src={`/social/${item}.svg`}
@@ -37,7 +37,7 @@ function Footer() {
           <strong>RD Station</strong>
           .
           {' '}
-          <a className={styles.a} href="">
+          <a className={styles.a} href="http://">
             Política de Privacidade
           </a>
           .

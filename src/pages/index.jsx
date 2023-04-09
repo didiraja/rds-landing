@@ -17,14 +17,14 @@ import Footer from '@/components/Footer';
 const grotesque = Darker_Grotesque({
   variable: '--grotesque-font',
   // subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  weight: ['500', '700', '800', '900'],
   preload: false,
 });
 
 const nunito = Nunito_Sans({
   variable: '--nunito-font',
   // subsets: ['latin'],
-  weight: ['200', '300', '400', '600', '700', '800', '900'],
+  weight: ['200', '300', '400', '600'],
   preload: false,
 });
 
