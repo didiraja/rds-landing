@@ -5,3 +5,22 @@
   padding: $sizing-400 $sizing-300;
   border-bottom: 2px solid $neutral-300;
 }
+
+.menu {
+  :global(.menu-list) {
+    // ul {
+    // }
+    li {
+      @extend .bodyLG;
+      font-size: $sizing-300;
+      font-weight: 600;
+      list-style-type: none;
+    }
+  }
+
+  :global(.btn-wrapper) {
+    button ~ button {
+      margin-left: $sizing-300;
+    }
+  }
+}
