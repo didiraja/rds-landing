@@ -9,7 +9,11 @@ function NavCTA() {
     <div className={`${styles.ctaBlock}`}>
       <div className="btn-wrapper">
         <Button secondary>Button</Button>
-        <Button>Button</Button>
+        <Button>
+          Button
+          {' '}
+          <img className="pl-2" src="/icon/right.svg" alt="" />
+        </Button>
       </div>
     </div>
   );
@@ -114,6 +118,7 @@ function Navbar() {
             width={32}
             height={32}
             onClick={toggleMenu}
+            preload
           />
         ) : null
       }

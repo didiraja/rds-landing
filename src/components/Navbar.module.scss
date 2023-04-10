@@ -82,6 +82,30 @@ $border-neutral-width: 2px solid $neutral-300;
       display: flex;
       justify-content: space-around;
       width: 70%;
+
+      button {
+        height: 90%;
+
+        // &.primary::before {
+        //   bottom: -8px;
+        //   left: 17px;
+        //   // width: 80%;
+        // }
+        // &.primary::after {
+        //   bottom: -8px;
+        //   right: 17px;
+        // }
+
+        // &.secondary::before {
+        //   bottom: -11px;
+        //   left: 15px;
+        // }
+
+        // &.secondary::after {
+        //   bottom: -11px;
+        //   right: 15px;
+        // }
+      }
     }
   }
 }

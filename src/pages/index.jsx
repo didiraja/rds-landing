@@ -24,7 +24,7 @@ const grotesque = Darker_Grotesque({
 const nunito = Nunito_Sans({
   variable: '--nunito-font',
   subsets: ['latin'],
-  weight: ['200', '300', '400', '600'],
+  weight: ['200', '300', '400', '600', '800'],
   preload: true,
 });
 
