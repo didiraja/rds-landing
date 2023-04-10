@@ -8,16 +8,44 @@ $border-neutral-width: 2px solid $neutral-300;
   border-bottom: $border-neutral-width;
 
   :global(.menu-list) {
-    li {
+    & > li {
       @extend .bodyLG;
       font-size: $sizing-300;
       font-weight: 600;
       list-style-type: none;
+
+      &:global(.submenu) {
+        :global(.label) {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
     }
   }
 
   :global(.btn-wrapper) {
     background-color: $neutral-200;
+  }
+}
+
+.subMenu {
+  list-style-type: none;
+  padding-left: $sizing-300;
+
+  li:first-child {
+    color: $blue-500;
+    text-transform: uppercase;
+    font-family: var(--grotesque-font);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 110%;
+    border-bottom: 1px solid $neutral-300;
+  }
+
+  li {
+    font-family: var(--nunito-font);
+    font-size: 14px;
+    line-height: 150%;
   }
 }
 
@@ -37,7 +65,7 @@ $border-neutral-width: 2px solid $neutral-300;
       padding: $sizing-300 0;
     }
 
-    li:not(:last-child) {
+    & > li:not(:last-child) {
       border-bottom: $border-neutral-width;
     }
   }
@@ -51,7 +79,6 @@ $border-neutral-width: 2px solid $neutral-300;
     box-shadow: 0px 6px 12px rgba(33, 36, 41, 0.3);
 
     :global(.btn-wrapper) {
-      // border: 1px solid black;
       display: flex;
       justify-content: space-around;
       width: 70%;
@@ -62,7 +89,6 @@ $border-neutral-width: 2px solid $neutral-300;
 .menuDesktop {
   :global(.menu-list) {
     // ul {
-    // }
     li {
       @extend .bodyLG;
       font-size: $sizing-300;
