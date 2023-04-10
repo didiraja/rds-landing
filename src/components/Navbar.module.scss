@@ -1,12 +1,65 @@
 @import "@/styles/vars.scss";
 
+$border-neutral-width: 2px solid $neutral-300;
+
 .navbar {
-  @apply bg-white block w-full flex justify-between;
+  @apply bg-white w-full relative block flex justify-between;
   padding: $sizing-400 $sizing-300;
-  border-bottom: 2px solid $neutral-300;
+  border-bottom: $border-neutral-width;
+
+  :global(.menu-list) {
+    li {
+      @extend .bodyLG;
+      font-size: $sizing-300;
+      font-weight: 600;
+      list-style-type: none;
+    }
+  }
+
+  :global(.btn-wrapper) {
+    background-color: $neutral-200;
+  }
 }
 
-.menu {
+.menuMobile {
+  position: absolute;
+  z-index: 1;
+  top: 4.6rem;
+  left: 0;
+  width: 100%;
+
+  :global(.menu-list) {
+    background-color: white;
+    border-bottom: $border-neutral-width;
+    padding: $sizing-300 $sizing-500;
+
+    li {
+      padding: $sizing-300 0;
+    }
+
+    li:not(:last-child) {
+      border-bottom: $border-neutral-width;
+    }
+  }
+
+  .ctaBlock {
+    background-color: $neutral-200;
+    padding: $sizing-400 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 6px 12px rgba(33, 36, 41, 0.3);
+
+    :global(.btn-wrapper) {
+      // border: 1px solid black;
+      display: flex;
+      justify-content: space-around;
+      width: 70%;
+    }
+  }
+}
+
+.menuDesktop {
   :global(.menu-list) {
     // ul {
     // }
