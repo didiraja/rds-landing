@@ -1,6 +1,7 @@
 import Head from 'next/head';
 // eslint-disable-next-line camelcase
 import { Darker_Grotesque, Nunito_Sans } from 'next/font/google';
+import { useIsClient } from 'usehooks-ts';
 import styles from '@/styles/Home.module.scss';
 
 import Navbar from '@/components/Navbar';
@@ -29,6 +30,10 @@ const nunito = Nunito_Sans({
 });
 
 export default function Home() {
+  const isClient = useIsClient();
+
+  if (!isClient) return null;
+
   return (
     <div id="home" className={`${grotesque.variable} ${nunito.variable}`}>
       <Head>

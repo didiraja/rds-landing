@@ -3,18 +3,20 @@
 $border-neutral-width: 2px solid $neutral-300;
 
 .navbar {
-  @apply bg-white w-full relative block flex justify-between;
+  @apply bg-white w-full relative flex justify-between;
   padding: $sizing-400 $sizing-300;
   border-bottom: $border-neutral-width;
 
   :global(.menu-list) {
+    position: relative;
+
     & > li {
       @extend .bodyLG;
       font-size: $sizing-300;
       font-weight: 600;
       list-style-type: none;
 
-      &:global(.submenu) {
+      &:global(.has-submenu) {
         :global(.label) {
           display: flex;
           justify-content: space-between;
@@ -22,15 +24,10 @@ $border-neutral-width: 2px solid $neutral-300;
       }
     }
   }
-
-  :global(.btn-wrapper) {
-    background-color: $neutral-200;
-  }
 }
 
 .subMenu {
   list-style-type: none;
-  padding-left: $sizing-300;
 
   li:first-child {
     color: $blue-500;
@@ -70,6 +67,10 @@ $border-neutral-width: 2px solid $neutral-300;
     }
   }
 
+  .subMenu {
+    padding-left: $sizing-300;
+  }
+
   .ctaBlock {
     background-color: $neutral-200;
     padding: $sizing-400 0;
@@ -85,45 +86,53 @@ $border-neutral-width: 2px solid $neutral-300;
 
       button {
         height: 90%;
-
-        // &.primary::before {
-        //   bottom: -8px;
-        //   left: 17px;
-        //   // width: 80%;
-        // }
-        // &.primary::after {
-        //   bottom: -8px;
-        //   right: 17px;
-        // }
-
-        // &.secondary::before {
-        //   bottom: -11px;
-        //   left: 15px;
-        // }
-
-        // &.secondary::after {
-        //   bottom: -11px;
-        //   right: 15px;
-        // }
       }
     }
   }
 }
 
 .menuDesktop {
+  @apply flex items-center justify-end;
+  width: 70%;
+  // border: 1px solid black;
+
   :global(.menu-list) {
-    // ul {
+    display: flex;
+    justify-content: space-between;
+    margin-right: $sizing-500;
+    width: 100%;
+    // border: 1px solid red;
+
     li {
       @extend .bodyLG;
       font-size: $sizing-300;
       font-weight: 600;
       list-style-type: none;
+
+      &:global(.has-submenu) :global(.menu) {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        background: white;
+        top: 3rem;
+        min-width: 30rem;
+        padding: 20px;
+        transform: translateX(-25%);
+        // border: 1px solid black;
+
+        ul {
+        }
+      }
     }
   }
 
-  :global(.btn-wrapper) {
-    button ~ button {
-      margin-left: $sizing-300;
+  .ctaBlock {
+    :global(.btn-wrapper) {
+      display: flex;
+
+      button:last-child {
+        margin-left: 1rem;
+      }
     }
   }
 }
