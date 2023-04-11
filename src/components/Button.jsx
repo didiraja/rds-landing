@@ -1,7 +1,7 @@
 import styles from './Button.module.scss';
 
 function Button({
-  children, className, primary = true, secondary, highlight = false, onClick,
+  children, className, primary = true, secondary, highlight = false, /* onClick, */
 }) {
   return (
   // <div className={styles.wrapper}>

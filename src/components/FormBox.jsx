@@ -1,9 +1,18 @@
-import styles from './FormBox.module.scss';
+import { useForm } from 'react-hook-form';
+import InputMask from 'react-input-mask';
+import { useEffect, useState } from 'react';
 import Button from '@/components/Button';
+import styles from './FormBox.module.scss';
 
 const select = ['Sócio(a) / CEO / Proprietário(a)', 'Diretor(a) de Vendas', 'Diretor(a) de Marketing', 'Diretor(a) Outras Áreas', 'Gerente de Marketing', 'Gerente de Vendas', 'Coordenador(a)/Supervisor(a) de Marketing', 'Coordenador(a)/Supervisor(a) de Vendas', 'Analista/Assistente de Marketing', 'Analista/Assistente de Vendas', 'Vendedor(a) / Executivo(a) de Contas', 'Estudante', 'Outros Cargo'];
 
 function FormBox() {
+  const {
+    register, handleSubmit, watch, formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => console.log('HOOK FORM', data);
+
   return (
     <section id="form" className={styles.formSection}>
 
@@ -18,58 +27,163 @@ function FormBox() {
 
           <hr />
 
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <p className="form-label">Diga, qual seu nome?</p>
             <input
-              required
-              id="field-name"
               className="form-general"
               type="text"
-              name="name"
+              {...register('name', {
+                required: true,
+                minLength: {
+                  value: 3,
+                  message: 'minLength is 5',
+                },
+              })}
               placeholder="Insira seu nome"
             />
+            {errors.name && (
+              errors.name.message
+                ? (
+                  <span>
+                    {errors.name.message}
+                  </span>
+                )
+
+                : <p>Nome é obrigatório</p>
+            )}
 
             <p className="form-label">Seu email de trabalho</p>
             <input
-              required
-              id="field-email"
               className="form-general"
               type="email"
-              name="email"
+              {...register('email', {
+                required: true,
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: 'invalid email address',
+                },
+              })}
               placeholder="Insira seu e-mail"
             />
+            {errors.email && (
+              errors.email.message
+                ? (
+                  <span>
+                    {errors.email.message}
+                  </span>
+                )
 
+                : <p>E-mail é obrigatório</p>
+            )}
+
+            {/* (99) 9999[9]-9999 */}
             <p className="form-label">Seu telefone</p>
-            <input
-              required
-              id="field-phone"
+            <InputMask
               className="form-general"
-              type="text"
-              name="phone"
+              mask="(99) 99999-9999"
+              {...register('phone', {
+                required: true,
+              })}
               placeholder="Insira seu número de telefone com DDD"
             />
+            {errors.phone && (
+              errors.phone.message
+                ? (
+                  <span>
+                    {errors.phone.message}
+                  </span>
+                )
+
+                : <p>Telefone é obrigatório</p>
+            )}
 
             <p className="form-label">Seu cargo de ocupação</p>
-            <select required className="form-select" name="job" id="field-job">
+            <select
+              className="form-select"
+              {...register('job', {
+                required: true,
+              })}
+            >
               <option value="">Selecione seu cargo</option>
               {select ? select.map((item) => <option value={item}>{item}</option>) : null}
             </select>
+            {errors.job && (
+              errors.job.message
+                ? (
+                  <span>
+                    {errors.job.message}
+                  </span>
+                )
+
+                : <p>Ocupação é obrigatório</p>
+            )}
 
             <p className="form-label">Crie uma senha</p>
-            <input className="form-general" type="password" name="" id="" />
+            <input
+              className="form-general"
+              type="password"
+              maxLength="20"
+              {...register('password', {
+                required: 'Password is required',
+                minLength: {
+                  value: 8,
+                  message: 'Password must be at least 8 characters long',
+                },
+                maxLength: {
+                  value: 20,
+                  message: 'Password must not exceed 20 characters',
+                },
+                // pattern: {
+                //   value: /^(?=.*[a-z])(?=.*[A-Z])/,
+                //   message: 'Password must include at least one uppercase and one lowercase letter',
+                // },
+              })}
+            />
+            {errors.password && (
+              errors.password.message
+                ? (
+                  <span>
+                    {errors.password.message}
+                  </span>
+                )
+
+                : <p>Senha é obrigatório</p>
+            )}
+
+            <p className="form-label">Confirme uma senha</p>
+            <input
+              className="form-general"
+              type="password"
+              maxLength="20"
+              {...register('confirmPassword', {
+                required: true,
+              })}
+            />
+            {errors.confirmPassword && (
+              errors.confirmPassword.message
+                ? (
+                  <span>
+                    {errors.confirmPassword.message}
+                  </span>
+                )
+
+                : <p>Senha é obrigatório</p>
+            )}
+
+            {/*
 
             <p className="form-label">Confirme sua senha</p>
-            <input required className="form-general" type="password" name="" id="" />
+            <input className="form-general" type="password" name="" id="" />
 
             <p className="form-label">Qual o site da sua empresa?</p>
 
             <div className="radio-wrapper">
-              <input required className="form-radio" type="radio" name="site" id="site" />
+              <input className="form-radio" type="radio" name="site" id="site" />
               <label htmlFor="site">Meu site é</label>
             </div>
 
             <input
-              required
+
               className="form-general"
               type="text"
               name=""
@@ -78,7 +192,7 @@ function FormBox() {
             />
 
             <div className="radio-wrapper">
-              <input required className="form-radio" type="radio" name="site" id="no-site" />
+              <input className="form-radio" type="radio" name="site" id="no-site" />
               <label htmlFor="site">Ainda não tenho site</label>
             </div>
 
@@ -108,7 +222,7 @@ function FormBox() {
               </li>
               <li>Ao preencher o formulário, concordo em receber comunicações de acordo com meus interesses.</li>
               <li>*Você pode alterar suas permissões de comunicação a qualquer tempo.</li>
-            </ul>
+            </ul> */}
 
             <Button highlight className="w-full">criar minha conta</Button>
           </form>
