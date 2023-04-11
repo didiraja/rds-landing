@@ -52,17 +52,17 @@ export default function Home() {
 
         <Together />
 
-        <Results />
-
-        <Benefits />
-
-        <CTA />
-
-        <Demo />
-
-        <Integrations />
-
       </main>
+
+      <Results />
+
+      <Benefits />
+
+      <CTA />
+
+      <Demo />
+
+      <Integrations />
 
       <Footer />
     </div>

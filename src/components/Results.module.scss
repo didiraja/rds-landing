@@ -5,7 +5,6 @@
     list-style: none;
   }
   li {
-    @extend .contentText;
     display: flex;
     align-items: flex-start;
   }

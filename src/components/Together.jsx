@@ -4,22 +4,29 @@ function Together() {
   return (
     <section id="together" className={`${styles.together}`}>
 
-      <div className={`${styles.container}`}>
+      <div className="wrapper">
 
-        <p className={styles.contentTitle}>Estaremos juntos desde o primeiro passo!</p>
+        <div className={`${styles.container}`}>
 
-        <p className={styles.contentText}>
-          Se você ainda não sabe como extrair o máximo das ações digitais, não tem problema. O
-          {' '}
-          <strong>RD Station Marketing</strong>
-          {' '}
-          é mais que uma ferramenta, nos importamos com os seus resultados.
-        </p>
+          <p className="title">Estaremos juntos desde o primeiro passo!</p>
 
-        <p className={styles.contentText}>
-          <strong>Estaremos com você do planejamento até a prática!</strong>
-        </p>
+          <p className="content">
+            Se você ainda não sabe como extrair o máximo das ações digitais, não tem problema. O
+            {' '}
+            <strong>RD Station Marketing</strong>
+            {' '}
+            é mais que uma ferramenta, nos importamos com os seus resultados.
+          </p>
+
+          <br />
+
+          <p className="content">
+            <strong>Estaremos com você do planejamento até a prática!</strong>
+          </p>
+        </div>
+
       </div>
+
     </section>
   );
 }

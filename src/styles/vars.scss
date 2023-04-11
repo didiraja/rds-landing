@@ -79,6 +79,10 @@ $sizing-800: 56px;
   font-size: $sizing-300;
   line-height: 150%;
   font-weight: 300;
+
+  strong {
+    font-weight: 600;
+  }
 }
 
 .bodySM {
@@ -100,32 +104,7 @@ $sizing-800: 56px;
   color: $blue-500;
 }
 
-.contentTitle {
-  @extend .headingSM;
-  @apply font-bold;
-  margin-bottom: $sizing-400;
-}
-
-.contentSub {
-  @extend .bodySM;
-  @apply font-normal;
-  margin-bottom: $sizing-400;
-}
-
-.contentText {
-  @extend .bodyMD;
-  margin-bottom: $sizing-400;
-
-  strong {
-    @apply font-bold;
-  }
-}
-
 @media (min-width: 1024px) {
-  .container {
-    padding-top: $sizing-300;
-  }
-
   .headingLG {
     // font-size: $sizing-800;
   }

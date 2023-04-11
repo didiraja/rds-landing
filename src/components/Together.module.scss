@@ -1,17 +1,28 @@
 @import "@/styles/vars.scss";
 
 .together {
-  background-color: $blue-700;
+  background-color: $neutral-200;
   color: white;
   margin-bottom: $sizing-700;
+
+  :global(.wrapper) {
+    background-color: $blue-700;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 15%);
+    padding: 48px $sizing-300 $sizing-700;
+  }
+
+  :global(.title) {
+    @extend .headingXS;
+    font-weight: 800;
+    width: 94%;
+    margin-bottom: $sizing-300;
+  }
+
+  :global(.content) {
+    @extend .bodyMD;
+    width: 93%;
+  }
 }
 
 @media (min-width: 1024px) {
-  .together {
-    padding-top: 4rem;
-
-    .contentText {
-      width: 33rem;
-    }
-  }
 }
