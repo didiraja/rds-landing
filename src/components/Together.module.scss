@@ -7,8 +7,8 @@
 
   :global(.wrapper) {
     background-color: $blue-700;
-    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 15%);
-    padding: 48px $sizing-300 $sizing-700;
+    clip-path: polygon(2rem 0, 100% 0, 100% 100%, 0 100%, 0 15%);
+    padding: 48px $sizing-300 $sizing-700 0;
   }
 
   :global(.title) {
@@ -25,4 +25,19 @@
 }
 
 @media (min-width: 1024px) {
+  .together {
+    :global(.wrapper) {
+      background-color: $blue-700;
+      clip-path: polygon(3rem 0, 100% 0, 100% 100%, 0 100%, 0 3rem);
+      padding: 4rem $sizing-300 4rem 0;
+    }
+
+    :global(.container) {
+      padding: 0 0 0 $sizing-300;
+    }
+
+    :global(.content) {
+      width: 48%;
+    }
+  }
 }

@@ -46,6 +46,7 @@ export default function Home() {
       <Navbar />
 
       <main className={`relative ${styles.main}`}>
+
         <Lead />
 
         <FormBox />

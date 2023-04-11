@@ -87,8 +87,21 @@
 @media (min-width: 1024px) {
   .formPosition {
     position: absolute;
-    top: 0;
+    top: -27rem;
     right: 0;
-    max-width: 500px;
+    max-width: 30rem;
+    z-index: 1;
+    box-sizing: border-box;
   }
+}
+
+@media (min-width: 1200px) {
+  // .formPosition {
+  //   position: absolute;
+  //   top: -13rem;
+  //   right: 0;
+  //   max-width: 500px;
+  //   z-index: 1;
+  //   box-sizing: border-box;
+  // }
 }

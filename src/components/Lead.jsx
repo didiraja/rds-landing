@@ -3,7 +3,7 @@ import styles from './Lead.module.scss';
 function Lead() {
   return (
     <section id="lead" className={styles.lead}>
-      <div className="container">
+      <div className="container mx-auto">
         <p className="title">
           Gere mais
           {' '}

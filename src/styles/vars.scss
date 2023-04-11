@@ -105,23 +105,19 @@ $sizing-800: 56px;
 }
 
 @media (min-width: 1024px) {
-  .headingLG {
-    // font-size: $sizing-800;
-  }
+  // .headingMD {
+  //   font-size: $sizing-700;
+  // }
 
-  .headingMD {
-    font-size: $sizing-700;
-  }
+  // .headingSM {
+  //   font-size: $sizing-500;
+  // }
 
-  .headingSM {
-    font-size: $sizing-500;
-  }
+  // .headingXS {
+  //   font-size: $sizing-400;
+  // }
 
-  .headingXS {
-    font-size: $sizing-400;
-  }
-
-  .subtitleSM {
-    font-size: $sizing-300;
-  }
+  // .subtitleSM {
+  //   font-size: $sizing-300;
+  // }
 }

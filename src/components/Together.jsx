@@ -6,7 +6,7 @@ function Together() {
 
       <div className="wrapper">
 
-        <div className={`${styles.container}`}>
+        <div className="container mx-auto">
 
           <p className="title">Estaremos juntos desde o primeiro passo!</p>
 
