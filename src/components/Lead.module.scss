@@ -1,31 +1,42 @@
 @import "@/styles/vars.scss";
 
-.titleBlock {
+.lead {
+  padding-top: $sizing-700;
+  clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0 100%, 0 0);
+  background-color: $neutral-200;
+
+  :global(.container) {
+    padding: 0 $sizing-300;
+  }
+
   :global(.title) {
     @extend .headingLG;
+    width: 90%;
     margin-bottom: $sizing-500;
   }
 
   :global(.description) {
     @extend .bodyMD;
-    margin-bottom: $sizing-600;
+    width: 95%;
+    padding-bottom: $sizing-600;
+    font-weight: 400;
   }
 }
 
-@media (min-width: 1024px) {
-  .lead {
-    padding-left: 2rem;
-    padding-bottom: 15rem;
-    padding-top: 3rem;
-  }
+// @media (min-width: 1024px) {
+//   .lead {
+//     padding-left: 2rem;
+//     padding-bottom: 15rem;
+//     padding-top: 3rem;
+//   }
 
-  .titleBlock {
-    width: 26rem;
-  }
+//   .titleBlock {
+//     width: 26rem;
+//   }
 
-  .lead {
-    :global(.description) {
-      width: 30rem;
-    }
-  }
-}
+//   .lead {
+//     :global(.description) {
+//       width: 30rem;
+//     }
+//   }
+// }

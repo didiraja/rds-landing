@@ -1,5 +1,10 @@
 @import "@/styles/vars.scss";
 
+.formSection {
+  background: $neutral-200;
+  padding: 0 $sizing-300 $sizing-700;
+}
+
 .formBox {
   text-align: center;
   background-color: white;
@@ -35,6 +40,7 @@
 
   :global(.form-general) {
     @apply w-full;
+    font-size: $sizing-200;
     background-color: white;
     border: 2px solid black;
     box-shadow: inset 6px 6px 0px #eefbfb;

@@ -5,8 +5,8 @@ const select = ['Sócio(a) / CEO / Proprietário(a)', 'Diretor(a) de Vendas', 'D
 
 function FormBox() {
   return (
-    <div className={`${styles.container} ${styles.formPosition}`}>
-      <section id="form-box" className={styles.formBox}>
+    <section id="form" className={styles.formSection}>
+      <div className={`${styles.formBox} ${styles.formPosition}`}>
         <p className="title">
           Comece seus 10 dias de teste grátis do RD Station Marketing!
         </p>
@@ -85,7 +85,7 @@ function FormBox() {
               Ao criar minha conta estou de acordo com os
               {' '}
               <a
-                href="http://"
+                href="https://legal.rdstation.com/pt-BR/rdstation-services-agreement/"
                 target="_blank"
                 className={`${styles.a} ${styles.highlight}`}
                 rel="noreferrer"
@@ -96,7 +96,7 @@ function FormBox() {
               do software e
               {' '}
               <a
-                href="http://"
+                href="https://legal.rdstation.com/pt/privacy-policy/"
                 target="_blank"
                 className={`${styles.a} ${styles.highlight}`}
                 rel="noreferrer"
@@ -110,8 +110,8 @@ function FormBox() {
 
           <Button highlight className="w-full">criar minha conta</Button>
         </form>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
 
