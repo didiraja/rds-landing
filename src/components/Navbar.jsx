@@ -10,15 +10,17 @@ function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      <Image
-        src="/logo-default.svg"
-        alt="RD Station"
-        width={150}
-        height={24}
-        priority
-      />
+      <div className="container">
+        <Image
+          src="/logo-default.svg"
+          alt="RD Station"
+          width={150}
+          height={24}
+          priority
+        />
 
-      {!isDesktop ? <MenuMobile /> : <NavDesktop />}
+        {!isDesktop ? <MenuMobile /> : <NavDesktop />}
+      </div>
     </nav>
   );
 }
@@ -79,7 +81,7 @@ function NavDesktop() {
 }
 
 function MenuList() {
-  const [showSub, toggleSub] = useToggle(true);
+  const [showSub, toggleSub] = useToggle();
 
   return (
     <>

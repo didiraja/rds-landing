@@ -7,6 +7,12 @@ $border-neutral-width: 2px solid $neutral-300;
   padding: $sizing-400 $sizing-300;
   border-bottom: $border-neutral-width;
 
+  :global(.container) {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+
   :global(.menu-list) {
     position: relative;
 
@@ -100,7 +106,7 @@ $border-neutral-width: 2px solid $neutral-300;
     display: flex;
     justify-content: space-between;
     margin-right: $sizing-500;
-    width: 100%;
+    width: 33rem;
     // border: 1px solid red;
 
     li {
