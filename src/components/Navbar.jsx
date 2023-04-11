@@ -79,7 +79,7 @@ function NavDesktop() {
 }
 
 function MenuList() {
-  const [showSub, toggleSub] = useToggle();
+  const [showSub, toggleSub] = useToggle(true);
 
   return (
     <>
