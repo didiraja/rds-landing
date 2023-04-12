@@ -10,7 +10,7 @@
   background-color: white;
   box-shadow: 0px 4px 12px rgba(33, 36, 41, 0.14);
   border-radius: 2px;
-  padding: $sizing-700 $sizing-500;
+  padding: $sizing-500;
 
   :global(.title) {
     @extend .headingSM;

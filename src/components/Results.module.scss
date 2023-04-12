@@ -1,13 +1,37 @@
 @import "@/styles/vars.scss";
 
 .results {
+  position: relative;
+  background-color: $neutral-200;
+  padding: $sizing-700 $sizing-300 0;
+
+  :global(.container) {
+    @apply mx-auto;
+  }
+
+  :global(.title) {
+    @extend .headingXS;
+    font-weight: 900;
+    margin-bottom: $sizing-300;
+  }
+
+  :global(.subtitle) {
+    @extend .bodySM;
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: $sizing-500;
+  }
+
   ul {
     list-style: none;
   }
+
   li {
     display: flex;
     align-items: flex-start;
+    margin-bottom: $sizing-500;
   }
+
   li::before {
     background: url("/icon/check.svg") no-repeat left top;
     width: 24px;
@@ -15,5 +39,38 @@
     content: "";
     padding-right: 18px;
     margin-right: 18px;
+  }
+
+  :global(.content) {
+    order: 1;
+  }
+
+  :global(.results-img) {
+    order: 2;
+    clip-path: polygon(80% 0, 100% 20%, 100% 100%, 0 100%, 0 0);
+  }
+}
+
+@media (min-width: 1400px) {
+  .results {
+    padding-top: 21rem;
+    padding-bottom: 5rem;
+    // clip-path: polygon(0 0, 100% 0, 100% 100%, 55% 100%, 0 69%);
+
+    :global(.container) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    :global(.content) {
+      order: 2;
+      width: 40%;
+    }
+
+    :global(.results-img) {
+      order: 1;
+      max-width: 100%;
+    }
   }
 }
