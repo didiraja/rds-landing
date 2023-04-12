@@ -2,10 +2,30 @@
 
 .benefits {
   background-color: white;
+  padding: $sizing-700 $sizing-300 0;
 
   :global(.title) {
     @extend .headingLG;
     font-weight: 900;
-    margin-bottom: 64px;
+    margin-bottom: $sizing-500;
+  }
+}
+
+@media (min-width: 1400px) {
+  .benefits {
+    :global(.title) {
+      width: 50%;
+      margin-bottom: 3rem;
+    }
+
+    :global(.slider-wrapper) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      :global(.slide) {
+        width: 32%;
+      }
+    }
   }
 }

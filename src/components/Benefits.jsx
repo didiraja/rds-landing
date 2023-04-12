@@ -43,20 +43,23 @@ const benefits = [
 function Benefits() {
   return (
     <section className={styles.benefits}>
-      <div className={styles.container}>
+      <div className="container mx-auto">
         <p className="title">
           A ferramenta de Automação de Marketing líder na América Latina
         </p>
 
-        {benefits
-          ? benefits.map((item) => (
-            <Slide
-              icon={item.icon}
-              title={item.title}
-              content={item.content}
-            />
-          ))
-          : null}
+        <div className="slider-wrapper">
+          {benefits
+            ? benefits.map((item) => (
+              <Slide
+                key={item.title}
+                icon={item.icon}
+                title={item.title}
+                content={item.content}
+              />
+            ))
+            : null}
+        </div>
       </div>
     </section>
   );

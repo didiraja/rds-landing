@@ -3,7 +3,7 @@ import styles from './Slide.module.scss';
 
 function Slide({ icon, title, content }) {
   return (
-    <div className={styles.slide}>
+    <div className={`${styles.slide} slide`}>
 
       <div className={styles.iconWrapper}>
         <Image
@@ -26,7 +26,5 @@ function Slide({ icon, title, content }) {
     </div>
   );
 }
-
-// function Slider() {}
 
 export default Slide;
