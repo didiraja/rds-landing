@@ -96,12 +96,13 @@
 }
 
 @media (min-width: 1200px) {
-  // .formPosition {
-  //   position: absolute;
-  //   top: -13rem;
-  //   right: 0;
-  //   max-width: 500px;
-  //   z-index: 1;
-  //   box-sizing: border-box;
-  // }
+  .formPosition {
+    right: 5rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  .formPosition {
+    right: 0;
+  }
 }

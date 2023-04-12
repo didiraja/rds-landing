@@ -4,12 +4,12 @@ import styles from './Results.module.scss';
 function Results() {
   return (
     <section id="results" className={styles.results}>
-      <div className={styles.container}>
-        <p className={styles.contentTitle}>
+      <div className="container mx-auto">
+        <p className="title">
           Resultados previsíveis e mais clientes para sua empresa
         </p>
 
-        <p className={styles.contentSub}>
+        <p className="subtitle">
           Torne sua atuação no Marketing Digital mais eficaz
         </p>
 

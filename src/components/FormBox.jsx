@@ -40,7 +40,7 @@ function FormBox() {
   return (
     <section id="form" className={styles.formSection}>
 
-      <div className="container relative">
+      <div className="container relative mx-auto">
         <div className={`${styles.formBox} ${styles.formPosition}`}>
           <p className="title">
             Comece seus 10 dias de teste grátis do RD Station Marketing!
@@ -148,6 +148,7 @@ function FormBox() {
             <input
               className="form-general"
               type="password"
+              placeholder="Insira a senha desejada"
               maxLength="20"
               {...register('password', {
                 required: 'Password is required',
@@ -181,6 +182,7 @@ function FormBox() {
               className="form-general"
               type="password"
               maxLength="20"
+              placeholder="Confirme sua senha"
               {...register('confirmPassword', {
                 required: true,
               })}
@@ -196,31 +198,59 @@ function FormBox() {
                 : <p>Senha é obrigatório</p>
             )}
 
-            {/*
-
-            <p className="form-label">Confirme sua senha</p>
-            <input className="form-general" type="password" name="" id="" />
-
             <p className="form-label">Qual o site da sua empresa?</p>
 
             <div className="radio-wrapper">
-              <input className="form-radio" type="radio" name="site" id="site" />
+              <input
+                className="form-radio"
+                type="radio"
+                {...register('site', {
+                  required: true,
+                })}
+              />
               <label htmlFor="site">Meu site é</label>
             </div>
 
             <input
-
               className="form-general"
               type="text"
-              name=""
-              id=""
+              {...register('siteUrl', {
+                required: true,
+              })}
               placeholder="Insira o endereço do seu site"
             />
+            {errors.siteUrl && (
+              errors.siteUrl.message
+                ? (
+                  <span>
+                    {errors.siteUrl.message}
+                  </span>
+                )
+
+                : <p>Informe o endereço do site</p>
+            )}
 
             <div className="radio-wrapper">
-              <input className="form-radio" type="radio" name="site" id="no-site" />
+              <input
+                className="form-radio"
+                type="radio"
+                {...register('site', {
+                  required: true,
+                })}
+              />
               <label htmlFor="site">Ainda não tenho site</label>
             </div>
+
+            {errors.site && (
+              errors.site.message
+                ? (
+                  <span>
+                    {errors.site.message}
+                  </span>
+                )
+
+                : <p>Informe sobre o site da sua empresa</p>
+            )}
 
             <ul className="legal">
               <li>
@@ -248,7 +278,7 @@ function FormBox() {
               </li>
               <li>Ao preencher o formulário, concordo em receber comunicações de acordo com meus interesses.</li>
               <li>*Você pode alterar suas permissões de comunicação a qualquer tempo.</li>
-            </ul> */}
+            </ul>
 
             <Button highlight className="w-full">criar minha conta</Button>
           </form>

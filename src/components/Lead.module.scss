@@ -42,5 +42,39 @@
 
 @media (min-width: 1200px) {
   .lead {
+    :global(.container) {
+      padding: 0 $sizing-300;
+    }
+
+    :global(.title) {
+      width: 46%;
+    }
+    :global(.description) {
+      width: 40%;
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  .lead {
+    :global(.container) {
+      padding-left: 0;
+    }
+
+    :global(.title) {
+      width: 40%;
+    }
+  }
+}
+
+@media (min-width: 1900px) {
+  .lead {
+    :global(.container) {
+      padding: 0 $sizing-800;
+    }
+
+    :global(.description) {
+      width: 37%;
+    }
   }
 }

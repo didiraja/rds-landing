@@ -8,7 +8,7 @@
   :global(.wrapper) {
     background-color: $blue-700;
     clip-path: polygon(2rem 0, 100% 0, 100% 100%, 0 100%, 0 15%);
-    padding: 48px $sizing-300 $sizing-700 0;
+    padding: 48px $sizing-300 $sizing-700;
   }
 
   :global(.title) {
@@ -33,11 +33,43 @@
     }
 
     :global(.container) {
-      padding: 0 0 0 $sizing-300;
+      padding-left: $sizing-300;
     }
 
     :global(.content) {
       width: 48%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .together {
+    :global(.container) {
+      padding: 0 $sizing-300;
+    }
+
+    :global(.content) {
+      width: 48%;
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  .together {
+    :global(.container) {
+      padding-left: 0;
+    }
+
+    :global(.content) {
+      width: 47%;
+    }
+  }
+}
+
+@media (min-width: 1900px) {
+  .together {
+    :global(.content) {
+      width: 38%;
     }
   }
 }
