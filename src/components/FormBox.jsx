@@ -1,17 +1,41 @@
 import { useForm } from 'react-hook-form';
 import InputMask from 'react-input-mask';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Button from '@/components/Button';
 import styles from './FormBox.module.scss';
+import { MASKS } from '@/services';
 
 const select = ['Sócio(a) / CEO / Proprietário(a)', 'Diretor(a) de Vendas', 'Diretor(a) de Marketing', 'Diretor(a) Outras Áreas', 'Gerente de Marketing', 'Gerente de Vendas', 'Coordenador(a)/Supervisor(a) de Marketing', 'Coordenador(a)/Supervisor(a) de Vendas', 'Analista/Assistente de Marketing', 'Analista/Assistente de Vendas', 'Vendedor(a) / Executivo(a) de Contas', 'Estudante', 'Outros Cargo'];
 
 function FormBox() {
   const {
-    register, handleSubmit, watch, formState: { errors },
+    register, handleSubmit, /* watch, */ formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => console.log('HOOK FORM', data);
+
+  const [phoneMask, setPhoneMask] = useState(MASKS.LANDLINE);
+
+  function getNumbersFromString(str) {
+    const numbers = str.replace(/[^\d]/g, ''); // removes all non-numeric characters
+    return numbers.length > 0 ? numbers : '0'; // returns the numbers string, or '0' if empty
+  }
+
+  // Trim trailing slashes
+  function beforeMaskedStateChange(newState, oldState) {
+    const onlyNumbersNew = getNumbersFromString(newState.value);
+    const onlyNumbersOld = getNumbersFromString(oldState.value);
+
+    if (onlyNumbersOld.length >= 10) {
+      setPhoneMask(MASKS.CELLPHONE);
+
+      return newState;
+    }
+
+    if (onlyNumbersNew.length < 10) { setPhoneMask(MASKS.LANDLINE); }
+
+    return newState;
+  }
 
   return (
     <section id="form" className={styles.formSection}>
@@ -80,11 +104,13 @@ function FormBox() {
             <p className="form-label">Seu telefone</p>
             <InputMask
               className="form-general"
-              mask="(99) 99999-9999"
               {...register('phone', {
                 required: true,
               })}
               placeholder="Insira seu número de telefone com DDD"
+              mask={phoneMask}
+              maskPlaceholder={null}
+              beforeMaskedValueChange={beforeMaskedStateChange}
             />
             {errors.phone && (
               errors.phone.message
