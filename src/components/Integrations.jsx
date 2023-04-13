@@ -76,7 +76,7 @@ function Integrations() {
         <div className="brands-wrapper mx-auto">
           {integrations
             ? integrations.map((brand) => (
-              <div className="brand">
+              <div key={brand.label} className="brand">
                 <img
                   className="brand-icon mx-auto"
                   src={`/brands/${brand.icon}.svg`}

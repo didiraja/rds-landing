@@ -129,7 +129,6 @@ function FormBox() {
               })}
               placeholder="Insira seu número de telefone com DDD"
               mask={phoneMask}
-              maskPlaceholder={null}
               beforeMaskedValueChange={beforeMaskedStateChange}
             />
             {errors.phone && (
@@ -151,7 +150,7 @@ function FormBox() {
               })}
             >
               <option value="">Selecione seu cargo</option>
-              {select ? select.map((item) => <option value={item}>{item}</option>) : null}
+              {select ? select.map((item) => <option key={item} value={item}>{item}</option>) : null}
             </select>
             {errors.job && (
               errors.job.message

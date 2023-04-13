@@ -40,7 +40,7 @@ function Footer() {
         <div className="social">
           {social
             ? social.map((item) => (
-              <a href={item.link}>
+              <a href={item.link} key={item.icon}>
                 <img
                   className="social-icon"
                   src={`/social/${item.icon}.svg`}

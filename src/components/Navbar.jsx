@@ -47,7 +47,7 @@ function MenuMobile() {
           width={32}
           height={32}
           onClick={toggleMenu}
-          preload
+          priority
         />
       ) : null}
 
@@ -139,7 +139,7 @@ function NavCTA() {
             alt=""
             width={22}
             height={31}
-            preload
+            priority
           />
         </Button>
       </div>
