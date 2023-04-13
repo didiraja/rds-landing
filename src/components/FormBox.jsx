@@ -9,10 +9,23 @@ const select = ['Sócio(a) / CEO / Proprietário(a)', 'Diretor(a) de Vendas', 'D
 
 function FormBox() {
   const {
-    register, handleSubmit, /* watch, */ formState: { errors },
+    register, handleSubmit, getValues, formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log('HOOK FORM', data);
+  const onSubmit = (data) => {
+    console.log('FORM OBJ', data);
+
+    fetch('https://rdstation-signup-psel.herokuapp.com/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((daty) => console.log(daty))
+      .catch((error) => console.error(error));
+  };
 
   const [phoneMask, setPhoneMask] = useState(MASKS.LANDLINE);
 
@@ -36,6 +49,14 @@ function FormBox() {
 
     return newState;
   }
+
+  const validatePasswordConfirmation = (value) => {
+    const { password } = getValues();
+    if (password !== value) {
+      return 'As senhas precisam ser iguais';
+    }
+    return true;
+  };
 
   return (
     <section id="form" className={styles.formSection}>
@@ -147,7 +168,7 @@ function FormBox() {
             <p className="form-label">Crie uma senha</p>
             <input
               className="form-general"
-              type="password"
+              type="text"
               placeholder="Insira a senha desejada"
               maxLength="20"
               {...register('password', {
@@ -160,10 +181,10 @@ function FormBox() {
                   value: 20,
                   message: 'Password must not exceed 20 characters',
                 },
-                // pattern: {
-                //   value: /^(?=.*[a-z])(?=.*[A-Z])/,
-                //   message: 'Password must include at least one uppercase and one lowercase letter',
-                // },
+                pattern: {
+                  value: /^(?=.*[a-z])(?=.*[A-Z])/,
+                  message: 'Password must include at least one uppercase and one lowercase letter',
+                },
               })}
             />
             {errors.password && (
@@ -180,11 +201,12 @@ function FormBox() {
             <p className="form-label">Confirme uma senha</p>
             <input
               className="form-general"
-              type="password"
+              type="text"
+              placeholder="Confirm password"
               maxLength="20"
-              placeholder="Confirme sua senha"
               {...register('confirmPassword', {
-                required: true,
+                required: 'Please confirm password',
+                validate: validatePasswordConfirmation,
               })}
             />
             {errors.confirmPassword && (
@@ -195,7 +217,7 @@ function FormBox() {
                   </span>
                 )
 
-                : <p>Senha é obrigatório</p>
+                : <p>As senhas precisam ser iguais</p>
             )}
 
             <p className="form-label">Qual o site da sua empresa?</p>
@@ -215,7 +237,10 @@ function FormBox() {
               className="form-general"
               type="text"
               {...register('siteUrl', {
-                required: true,
+                pattern: {
+                  value: /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i,
+                  message: 'invalid url (include http/https)',
+                },
               })}
               placeholder="Insira o endereço do seu site"
             />
@@ -235,7 +260,6 @@ function FormBox() {
                 className="form-radio"
                 type="radio"
                 {...register('site', {
-                  required: true,
                 })}
               />
               <label htmlFor="site">Ainda não tenho site</label>
