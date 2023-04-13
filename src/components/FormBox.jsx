@@ -121,7 +121,6 @@ function FormBox() {
                 : <p>E-mail é obrigatório</p>
             )}
 
-            {/* (99) 9999[9]-9999 */}
             <p className="form-label">Seu telefone</p>
             <InputMask
               className="form-general"

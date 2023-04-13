@@ -12,7 +12,7 @@
     background-size: 200%;
     background-repeat: no-repeat;
 
-    padding: 5rem 12.5rem;
+    padding: $sizing-700 $sizing-500;
   }
 
   :global(.title) {
@@ -36,6 +36,7 @@
       background-position: -29.3rem -29.3rem, 30rem -31.8rem;
       background-size: 100%;
       background-repeat: no-repeat;
+      padding: 5rem 12.5rem;
     }
 
     :global(.title) {
