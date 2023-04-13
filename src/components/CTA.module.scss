@@ -1,23 +1,31 @@
 @import "@/styles/vars.scss";
 
 .cta {
-  background-color: $blue-700;
   color: white;
-  background-image: url("/graph-left.svg"), url("/graph-right.svg");
-  background-position: -320px 30px, -30px -320px;
-  background-size: 200%;
-  background-repeat: no-repeat;
   text-align: center;
+  margin: 4rem $sizing-300;
+
+  :global(.wrapper) {
+    background-color: $blue-700;
+    background-image: url("/graph-left.svg"), url("/graph-right.svg");
+    background-position: -320px 30px, -30px -320px;
+    background-size: 200%;
+    background-repeat: no-repeat;
+
+    padding: $sizing-700 $sizing-300;
+  }
 
   :global(.title) {
     @extend .headingMD;
-    margin-bottom: $sizing-300;
+    font-weight: 900;
+    width: 90%;
+    margin: 0 auto $sizing-300;
   }
 
   :global(.content) {
-    @extend .bodyMD;
-    font-size: 20px;
-    line-height: 150%;
+    @extend .bodyLG;
+    font-size: 18px;
+    font-weight: 300;
     margin-bottom: $sizing-600;
   }
 }

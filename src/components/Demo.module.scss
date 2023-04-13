@@ -2,9 +2,12 @@
 
 .demo {
   background-color: $neutral-200;
+  padding: $sizing-700 $sizing-300 $sizing-300;
 
   :global(.title) {
-    @extend .headingLG;
+    @extend .headingMD;
+    font-size: 27px;
+    font-weight: 900;
     margin-bottom: $sizing-300;
   }
 
