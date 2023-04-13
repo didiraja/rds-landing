@@ -2,15 +2,18 @@
 
 .integrations {
   background-color: $neutral-200;
+  padding: $sizing-700 $sizing-300 5rem;
 
   :global(.title) {
     @extend .headingLG;
-    // font-weight: 900;
+    font-size: 2.2rem;
+    font-weight: 900;
     margin-bottom: $sizing-300;
   }
 
   :global(.content) {
     @extend .bodyLG;
+    font-size: 1.1rem;
     margin-bottom: $sizing-600;
   }
 

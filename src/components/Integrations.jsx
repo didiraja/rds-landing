@@ -47,7 +47,7 @@ const integrations = [
 function Integrations() {
   return (
     <section className={styles.integrations}>
-      <div className={styles.container}>
+      <div className="container mx-auto">
         <p className="title">
           Torne sua operação de Marketing ainda mais poderosa
         </p>
@@ -72,7 +72,7 @@ function Integrations() {
             : null}
         </div>
 
-        <Button className="button block mx-auto">
+        <Button className="button mx-auto w-[90%]">
           criar conta gratuita
         </Button>
       </div>

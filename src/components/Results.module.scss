@@ -3,7 +3,7 @@
 .results {
   position: relative;
   background-color: $neutral-200;
-  padding: $sizing-700 $sizing-300 0;
+  padding: $sizing-700 $sizing-300 $sizing-300;
 
   :global(.container) {
     @apply mx-auto;
