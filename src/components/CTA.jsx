@@ -4,7 +4,7 @@ import styles from './CTA.module.scss';
 function Benefits() {
   return (
     <section className={styles.cta}>
-      <div className="container">
+      <div className="container mx-auto">
         <div className="wrapper">
           <p className="title">
             Por que mais de 25.000 empresas escolheram o RD Station?

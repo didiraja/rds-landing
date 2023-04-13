@@ -12,7 +12,7 @@
     background-size: 200%;
     background-repeat: no-repeat;
 
-    padding: $sizing-700 $sizing-300;
+    padding: 5rem 12.5rem;
   }
 
   :global(.title) {
@@ -27,5 +27,29 @@
     font-size: 18px;
     font-weight: 300;
     margin-bottom: $sizing-600;
+  }
+}
+
+@media (min-width: 1400px) {
+  .cta {
+    :global(.wrapper) {
+      background-position: -29.3rem -29.3rem, 30rem -31.8rem;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+
+    :global(.title) {
+      width: 60%;
+    }
+
+    :global(.content) {
+      @apply mx-auto;
+      width: 96%;
+    }
+
+    :global(button) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
   }
 }

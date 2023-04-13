@@ -6,23 +6,31 @@ function Demo() {
   return (
     <section className={styles.demo}>
       <div className="container mx-auto">
-        <p className="title">
-          Entenda melhor como o RD Station Marketing funciona na prática
-        </p>
 
-        <Button secondary className="button mx-auto">
-          assista a demonstração
-          {' '}
-          {'>'}
-        </Button>
+        <div className="wrapper">
+          <div className="content-wrapper">
+            <p className="title">
+              Entenda melhor como o RD Station Marketing funciona na prática
+            </p>
 
-        <Image
-          className="w-full thumbnail"
-          src="/img-video-thumbnail.jpg"
-          alt="menu"
-          width={424}
-          height={238}
-        />
+            <Button secondary className="button">
+              assista a demonstração
+              {' '}
+              {'>'}
+            </Button>
+          </div>
+
+          <div className="video-wrapper">
+            <Image
+              className="thumbnail mx-auto"
+              src="/img-video-thumbnail.jpg"
+              alt="menu"
+              width={649}
+              height={365}
+            />
+          </div>
+        </div>
+
       </div>
     </section>
   );

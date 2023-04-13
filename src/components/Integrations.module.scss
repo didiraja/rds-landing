@@ -1,7 +1,7 @@
 @import "@/styles/vars.scss";
 
 .integrations {
-  background-color: $neutral-200;
+  background-color: white;
   padding: $sizing-700 $sizing-300 5rem;
 
   :global(.title) {
@@ -22,6 +22,7 @@
     margin-bottom: $sizing-600;
 
     :global(.brand) {
+      display: inline-block;
       width: 50%;
       margin-bottom: $sizing-600;
     }
@@ -33,6 +34,27 @@
     :global(.label) {
       @extend .bodySM;
       font-weight: 500;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .integrations {
+    padding: 5rem 0;
+
+    :global(.container) {
+      display: flex;
+      align-items: center;
+    }
+
+    :global(.brands-wrapper) {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+
+      :global(.brand) {
+        width: 20%;
+      }
     }
   }
 }

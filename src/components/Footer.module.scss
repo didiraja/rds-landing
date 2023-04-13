@@ -21,3 +21,11 @@
     text-align: center;
   }
 }
+
+@media (min-width: 1400px) {
+  .footer {
+    :global(.social) {
+      width: 20%;
+    }
+  }
+}

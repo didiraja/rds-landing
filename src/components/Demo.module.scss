@@ -19,3 +19,29 @@
     cursor: pointer;
   }
 }
+
+@media (min-width: 1400px) {
+  .demo {
+    padding-bottom: $sizing-700;
+
+    :global(.wrapper) {
+      display: flex;
+      align-items: center;
+      width: 88%;
+      margin: 0 auto;
+    }
+
+    :global(.content-wrapper) {
+      width: 29%;
+      margin-right: 5rem;
+
+      :global(.title) {
+        // width: 50%;
+      }
+    }
+
+    :global(.video-wrapper) {
+      // width: 70%;
+    }
+  }
+}
