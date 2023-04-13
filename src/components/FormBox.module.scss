@@ -5,6 +5,10 @@
   padding: 0 $sizing-300 $sizing-700;
 }
 
+.errorLabel {
+  @apply rounded-md bg-red-200 text-red-700 py-1 mb-3;
+}
+
 .formBox {
   text-align: center;
   background-color: white;

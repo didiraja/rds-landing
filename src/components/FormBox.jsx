@@ -5,11 +5,28 @@ import Button from '@/components/Button';
 import styles from './FormBox.module.scss';
 import { MASKS } from '@/services';
 
-const select = ['Sócio(a) / CEO / Proprietário(a)', 'Diretor(a) de Vendas', 'Diretor(a) de Marketing', 'Diretor(a) Outras Áreas', 'Gerente de Marketing', 'Gerente de Vendas', 'Coordenador(a)/Supervisor(a) de Marketing', 'Coordenador(a)/Supervisor(a) de Vendas', 'Analista/Assistente de Marketing', 'Analista/Assistente de Vendas', 'Vendedor(a) / Executivo(a) de Contas', 'Estudante', 'Outros Cargo'];
+const select = [
+  'Sócio(a) / CEO / Proprietário(a)',
+  'Diretor(a) de Vendas',
+  'Diretor(a) de Marketing',
+  'Diretor(a) Outras Áreas',
+  'Gerente de Marketing',
+  'Gerente de Vendas',
+  'Coordenador(a)/Supervisor(a) de Marketing',
+  'Coordenador(a)/Supervisor(a) de Vendas',
+  'Analista/Assistente de Marketing',
+  'Analista/Assistente de Vendas',
+  'Vendedor(a) / Executivo(a) de Contas',
+  'Estudante',
+  'Outros Cargo',
+];
 
 function FormBox() {
   const {
-    register, handleSubmit, getValues, formState: { errors },
+    register,
+    handleSubmit,
+    getValues,
+    formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
@@ -34,7 +51,6 @@ function FormBox() {
     return numbers.length > 0 ? numbers : '0'; // returns the numbers string, or '0' if empty
   }
 
-  // Trim trailing slashes
   function beforeMaskedStateChange(newState, oldState) {
     const onlyNumbersNew = getNumbersFromString(newState.value);
     const onlyNumbersOld = getNumbersFromString(oldState.value);
@@ -45,7 +61,9 @@ function FormBox() {
       return newState;
     }
 
-    if (onlyNumbersNew.length < 10) { setPhoneMask(MASKS.LANDLINE); }
+    if (onlyNumbersNew.length < 10) {
+      setPhoneMask(MASKS.LANDLINE);
+    }
 
     return newState;
   }
@@ -60,15 +78,12 @@ function FormBox() {
 
   return (
     <section id="form" className={styles.formSection}>
-
       <div className="container relative mx-auto">
         <div className={`${styles.formBox} ${styles.formPosition}`}>
           <p className="title">
             Comece seus 10 dias de teste grátis do RD Station Marketing!
           </p>
-          <p className="sub">
-            Não precisa cadastrar cartão de crédito. 😉
-          </p>
+          <p className="sub">Não precisa cadastrar cartão de crédito. 😉</p>
 
           <hr />
 
@@ -81,20 +96,19 @@ function FormBox() {
                 required: true,
                 minLength: {
                   value: 3,
-                  message: 'minLength is 5',
+                  message: 'Mínimo de 3 caracteres',
                 },
               })}
               placeholder="Insira seu nome"
             />
             {errors.name && (
-              errors.name.message
-                ? (
-                  <span>
-                    {errors.name.message}
-                  </span>
-                )
-
-                : <p>Nome é obrigatório</p>
+              <div className={styles.errorLabel}>
+                {errors.name.message ? (
+                  <p>{errors.name.message}</p>
+                ) : (
+                  <p>Nome é obrigatório</p>
+                )}
+              </div>
             )}
 
             <p className="form-label">Seu email de trabalho</p>
@@ -105,20 +119,19 @@ function FormBox() {
                 required: true,
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: 'invalid email address',
+                  message: 'e-mail inválido',
                 },
               })}
               placeholder="Insira seu e-mail"
             />
             {errors.email && (
-              errors.email.message
-                ? (
-                  <span>
-                    {errors.email.message}
-                  </span>
-                )
-
-                : <p>E-mail é obrigatório</p>
+              <div className={styles.errorLabel}>
+                {errors.email.message ? (
+                  <p>{errors.email.message}</p>
+                ) : (
+                  <p>E-mail é obrigatório</p>
+                )}
+              </div>
             )}
 
             <p className="form-label">Seu telefone</p>
@@ -132,14 +145,13 @@ function FormBox() {
               beforeMaskedValueChange={beforeMaskedStateChange}
             />
             {errors.phone && (
-              errors.phone.message
-                ? (
-                  <span>
-                    {errors.phone.message}
-                  </span>
-                )
-
-                : <p>Telefone é obrigatório</p>
+              <div className={styles.errorLabel}>
+                {errors.phone.message ? (
+                  <p>{errors.phone.message}</p>
+                ) : (
+                  <p>Telefone é obrigatório</p>
+                )}
+              </div>
             )}
 
             <p className="form-label">Seu cargo de ocupação</p>
@@ -150,17 +162,23 @@ function FormBox() {
               })}
             >
               <option value="">Selecione seu cargo</option>
-              {select ? select.map((item) => <option key={item} value={item}>{item}</option>) : null}
+              {select
+                ? select.map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))
+                : null}
             </select>
-            {errors.job && (
-              errors.job.message
-                ? (
-                  <span>
-                    {errors.job.message}
-                  </span>
-                )
 
-                : <p>Ocupação é obrigatório</p>
+            {errors.job && (
+              <div className={styles.errorLabel}>
+                {errors.job.message ? (
+                  <p>{errors.job.message}</p>
+                ) : (
+                  <p>Ocupação é obrigatório</p>
+                )}
+              </div>
             )}
 
             <p className="form-label">Crie uma senha</p>
@@ -170,52 +188,51 @@ function FormBox() {
               placeholder="Insira a senha desejada"
               maxLength="20"
               {...register('password', {
-                required: 'Password is required',
+                required: 'Senha é obrigatório',
                 minLength: {
                   value: 8,
-                  message: 'Password must be at least 8 characters long',
+                  message: 'Senha precisa ter pelo menos 8 caracteres',
                 },
                 maxLength: {
                   value: 20,
-                  message: 'Password must not exceed 20 characters',
+                  message: 'Senha precisa ter no máximo 20 caracteres',
                 },
                 pattern: {
                   value: /^(?=.*[a-z])(?=.*[A-Z])/,
-                  message: 'Password must include at least one uppercase and one lowercase letter',
+                  message:
+                    'Senha precisa ter pelo menos 1 caractere MAIÚSCULO E 1 caractere MINÚSCULO',
                 },
               })}
             />
             {errors.password && (
-              errors.password.message
-                ? (
-                  <span>
-                    {errors.password.message}
-                  </span>
-                )
-
-                : <p>Senha é obrigatório</p>
+              <div className={styles.errorLabel}>
+                {errors.password.message ? (
+                  <p>{errors.password.message}</p>
+                ) : (
+                  <p>Senha é obrigatório</p>
+                )}
+              </div>
             )}
 
             <p className="form-label">Confirme uma senha</p>
             <input
               className="form-general"
               type="text"
-              placeholder="Confirm password"
+              placeholder="Confirme sua senha"
               maxLength="20"
               {...register('confirmPassword', {
-                required: 'Please confirm password',
+                required: 'As Senhas precisam ser iguais',
                 validate: validatePasswordConfirmation,
               })}
             />
             {errors.confirmPassword && (
-              errors.confirmPassword.message
-                ? (
-                  <span>
-                    {errors.confirmPassword.message}
-                  </span>
-                )
-
-                : <p>As senhas precisam ser iguais</p>
+              <div className={styles.errorLabel}>
+                {errors.confirmPassword.message ? (
+                  <p>{errors.confirmPassword.message}</p>
+                ) : (
+                  <p>As senhas precisam ser iguais</p>
+                )}
+              </div>
             )}
 
             <p className="form-label">Qual o site da sua empresa?</p>
@@ -237,47 +254,43 @@ function FormBox() {
               {...register('siteUrl', {
                 pattern: {
                   value: /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i,
-                  message: 'invalid url (include http/https)',
+                  message: 'url inválida (inclua http/https)',
                 },
               })}
               placeholder="Insira o endereço do seu site"
             />
             {errors.siteUrl && (
-              errors.siteUrl.message
-                ? (
-                  <span>
-                    {errors.siteUrl.message}
-                  </span>
-                )
-
-                : <p>Informe o endereço do site</p>
+              <div className={styles.errorLabel}>
+                {errors.siteUrl.message ? (
+                  <p>{errors.siteUrl.message}</p>
+                ) : (
+                  <p>Informe o endereço do site</p>
+                )}
+              </div>
             )}
 
             <div className="radio-wrapper">
               <input
                 className="form-radio"
                 type="radio"
-                {...register('site', {
-                })}
+                {...register('site', {})}
               />
               <label htmlFor="site">Ainda não tenho site</label>
             </div>
 
             {errors.site && (
-              errors.site.message
-                ? (
-                  <span>
-                    {errors.site.message}
-                  </span>
-                )
-
-                : <p>Informe sobre o site da sua empresa</p>
+              <div className={styles.errorLabel}>
+                {errors.site.message ? (
+                  <p>{errors.site.message}</p>
+                ) : (
+                  <p>Informe sobre o site da sua empresa</p>
+                )}
+              </div>
             )}
 
             <ul className="legal">
               <li>
                 Ao criar minha conta estou de acordo com os
-                {' '}
                 <a
                   href="https://legal.rdstation.com/pt-BR/rdstation-services-agreement/"
                   target="_blank"
@@ -298,15 +311,22 @@ function FormBox() {
                   política de privacidade.
                 </a>
               </li>
-              <li>Ao preencher o formulário, concordo em receber comunicações de acordo com meus interesses.</li>
-              <li>*Você pode alterar suas permissões de comunicação a qualquer tempo.</li>
+              <li>
+                Ao preencher o formulário, concordo em receber comunicações de
+                acordo com meus interesses.
+              </li>
+              <li>
+                *Você pode alterar suas permissões de comunicação a qualquer
+                tempo.
+              </li>
             </ul>
 
-            <Button highlight className="w-full">criar minha conta</Button>
+            <Button highlight className="w-full">
+              criar minha conta
+            </Button>
           </form>
         </div>
       </div>
-
     </section>
   );
 }
